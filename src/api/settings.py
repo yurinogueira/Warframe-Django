@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env.str("SECRET_KEY", default=get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.bool("DEBUG", default=False)
 
 ALLOWED_HOSTS = []
 
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.postgres",
+    "core",
 ]
 
 MIDDLEWARE = [
@@ -100,6 +101,17 @@ SESSION_COOKIE_DOMAIN = env.str("SESSION_COOKIE_DOMAIN", default=None)
 SESSION_COOKIE_SECURE = not DEBUG
 
 
+# CACHE
+# ---------------------------------------------------------------------------------------------------------------------
+CACHES = {
+    "default": env.cache(
+        "CACHES_DEFAULT_URL", default="locmemcache://unique-snowflake"
+    ),
+    "sessions": env.cache(
+        "CACHES_SESSIONS_URL", default="locmemcache://unique-snowflake"
+    ),
+}
+
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -134,7 +146,7 @@ USE_TZ = True
 # ---------------------------------------------------------------------------------------------------------------------
 STATIC_URL = urllib.parse.urljoin(env.str("STATIC_HOST", default=""), "/static/")
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "api/static")]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "images")]
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 MEDIA_HOST = env.str("MEDIA_HOST", default="")

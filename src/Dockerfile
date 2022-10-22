@@ -27,8 +27,19 @@ COPY ./ /usr/src/app
 RUN pip3 install --no-cache --upgrade pip setuptools
 RUN pip3 install -r requirements.txt
 
-# COLLECTSTATIC AND APPLY MIGRATIONS
+# COLLECTSTATIC
 RUN python3 manage.py collectstatic --noinput
-RUN python3 manage.py migrate
 
-CMD gunicorn api.wsgi:application
+CMD gunicorn --bind 0.0.0.0:8000 \
+             --workers 3 \
+             --threads 2 \
+             --keep-alive 5 \
+             --max-requests 1000 \
+             --worker-connections=1000 \
+             --access-logfile - \
+             --error-logfile - \
+             --log-level critical \
+             --worker-class gevent \
+             --reload \
+             --capture-output \
+             api.wsgi:application

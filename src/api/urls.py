@@ -13,9 +13,26 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
 from django.contrib import admin
-from django.urls import path
+from django.contrib.staticfiles.storage import staticfiles_storage
+from django.urls import path, re_path
+from django.views.generic import RedirectView
+from django.views.static import serve
+
+# Admin
+# ---------------------------------------------------------------------------
+favicon = RedirectView.as_view(url=staticfiles_storage.url("favicon.ico"))
+
+# Media Roots
+# ----------------------------------------------------------------------------
+MEDIA_ROOT = {"document_root": settings.MEDIA_ROOT}
+STATIC_ROOT = {"document_root": settings.STATIC_ROOT}
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    # Media Contents
+    # ------------------------------------------------------------------------
+    re_path(r"^media/(?P<path>.*)$", serve, MEDIA_ROOT),
+    re_path(r"^static/(?P<path>.*)$", serve, STATIC_ROOT),
 ]
