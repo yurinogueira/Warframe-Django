@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: warframe-django-api-postgres-container
+    restart: unless-stopped
+    volumes:
+      - warframe-django-pgdata:/var/lib/postgresql/data
+    networks:
+      - warframe-django-api-network
+    env_file:
+      - ./config/.env
+
+  web:
+    build:
+      context: src/
+      dockerfile: Dockerfile
+    container_name: warframe-django-api-django-container
+    restart: "unless-stopped"
+    stop_grace_period: "5s"
+    volumes:
+      - ./src:/usr/src/app
+      - warframe-django-django-static:/var/www/django/static
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    networks:
+      - warframe-django-api-network
+      - warframe-django-api-proxy-network
+    env_file: ./config/.env
+
+networks:
+  warframe-django-api-proxy-network:
+    name: warframe-django-api-proxy-network
+  warframe-django-api-network:
+
+volumes:
+  warframe-django-pgdata:
+  warframe-django-django-static:
