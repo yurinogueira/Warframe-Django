@@ -17,6 +17,7 @@ from django.conf import settings
 from django.contrib import admin
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.urls import path, re_path
+from django.conf.urls import include
 from django.views.generic import RedirectView
 from django.views.static import serve
 
@@ -35,4 +36,7 @@ urlpatterns = [
     # ------------------------------------------------------------------------
     re_path(r"^media/(?P<path>.*)$", serve, MEDIA_ROOT),
     re_path(r"^static/(?P<path>.*)$", serve, STATIC_ROOT),
+    # CORE
+    path("catalog/", include("catalog.urls")),
+    path("", RedirectView.as_view(url="catalog/")),
 ]
