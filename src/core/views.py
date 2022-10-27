@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from core.choices import COMMON, PRIME
 # Create your views here.
-from core.models import Image, Warframe
+from core.models import Image, Report, Warframe
 
 
 def index(request):
@@ -34,22 +34,16 @@ def about(request):
 
 
 def news(request):
-    """View function for home page of site."""
-
-    # Generate counts of some of the main objects
-    images = Image.objects.all().count()
+    reports = Report.objects.select_related("image").prefetch_related("badges")
 
     context = {
-        'num_images': images,
+        "reports": reports,
     }
 
-    # Render the HTML template index.htm with the data in the context variable
     return render(request, 'news.htm', context=context)
 
 
 def warframes(request):
-    """View function for home page of site."""
-
     c_warframes = Warframe.objects.select_related("image").filter(warframe_type=COMMON)
     p_warframes = Warframe.objects.select_related("image").filter(warframe_type=PRIME)
 

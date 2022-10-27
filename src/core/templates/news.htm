@@ -2,149 +2,39 @@
 {% load static %}
 
 {% block content %}
-  <section class="container mt-96px mb-5 align-items-center">
+<section class="container mt-96px mb-5 align-items-center">
     <div class="text-center">
-      <h3 class="default-color"><b>PROGRESSO PARA PRÓXIMA ATUALIZAÇÃO</b></h3>
-      <div class="progress mt-4">
-        <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
-             role="progressbar"
-             aria-valuenow="75"
-             aria-valuemin="0"
-             aria-valuemax="100"
-             style="width: 75%">
+        <h3 class="default-color"><b>PROGRESSO PARA PRÓXIMA ATUALIZAÇÃO</b></h3>
+        <div class="progress mt-4">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
+                 role="progressbar"
+                 aria-valuenow="75"
+                 aria-valuemin="0"
+                 aria-valuemax="100"
+                 style="width: 75%">
+            </div>
         </div>
-      </div>
     </div>
-  </section>
-  <section class="container align-items-center">
+</section>
+<section class="container align-items-center">
     <div class="row">
-      <div class="col-12 col-lg-6 mb-2">
-        <div class="card h-100">
-          <img src="{% static 'images/tennogen-card.webp' %}" class="card-img-top" alt="Tennogen 22">
-          <div class="card-body">
-            <h4 class="card-title"><b>22ª Rodada do TennoGen: 1ª Parte</b></h4>
-            <small class="text-black-50">Publicado em 2022-08-17 11:20:00</small>
-            <p class="card-text">Novas Personalizações, além de aprimoramentos de jogabilidade em relação à coleta de Medalhões</p>
-            <div class="float-end">
-              <span class="badge bg-secondary">PC</span>
-              <span class="badge bg-success">XBOX</span>
-              <span class="badge bg-primary">PSN</span>
-              <span class="badge bg-secondary">BLOG</span>
-              <span class="badge bg-danger">NINTENDO SWITCH</span>
+        {% for report in reports %}
+        <div class="col-12 col-lg-6 mb-2">
+            <div class="card h-100">
+                <img src="{% static report.image.path %}" class="card-img-top" alt="{{ report.image.name }}">
+                <div class="card-body">
+                    <h4 class="card-title"><b>{{ report.title }}</b></h4>
+                    <small class="text-black-50">{{ report.published_in }}</small>
+                    <p class="card-text">{{ report.message }}</p>
+                    <div class="float-end">
+                        {% for badge in report.badges.all %}
+                        <span class="{{ badge.css_classes }}">{{ badge.name }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      <div class="col-12 col-lg-6 mb-2">
-        <div class="card h-100">
-          <img src="{% static 'images/new-war-card.webp' %}" class="card-img-top" alt="Pacotes New War">
-          <div class="card-body">
-            <h4 class="card-title"><b>Última chance para obter os Pacotes de Suporte da Nova Guerra</b></h4>
-            <small class="text-black-50">Publicado em 2022-08-16 12:07:00</small>
-            <p class="card-text">Economize na compra de Personalizações exclusivas antes que elas desapareçam</p>
-            <div class="float-end">
-              <span class="badge bg-secondary">PC</span>
-              <span class="badge bg-success">XBOX</span>
-              <span class="badge bg-primary">PSN</span>
-              <span class="badge bg-danger">NINTENDO SWITCH</span>
-            </div>
-          </div>
-        </div>
-      </div>
+        {% endfor %}
     </div>
-    <div class="row">
-      <div class="col-12 col-lg-6 mb-2">
-        <div class="card h-100">
-          <img src="{% static 'images/baro-sync-card.webp' %}" class="card-img-top" alt="Sincronização do Baro">
-          <div class="card-body">
-            <h4 class="card-title"><b>Evento de Sincronização do Inventário do Baro Ki'teer entre Plataformas</b></h4>
-            <small class="text-black-50">Publicado em 2022-07-29 09:07:00</small>
-            <p class="card-text">A partir de sexta-feira, dia 29 de julho, o Inventário do Baro será sincronizado em todas as plataformas</p>
-            <div class="float-end">
-              <span class="badge bg-secondary">PC</span>
-              <span class="badge bg-success">XBOX</span>
-              <span class="badge bg-primary">PSN</span>
-              <span class="badge bg-secondary">BLOG</span>
-              <span class="badge bg-danger">NINTENDO SWITCH</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-lg-6 mb-2">
-        <div class="card h-100">
-          <img src="{% static 'images/team-change-card.webp' %}" class="card-img-top" alt="Transição de Equipe">
-          <div class="card-body">
-            <h4 class="card-title"><b>Transição da Equipe do Warframe</b></h4>
-            <small class="text-black-50">Publicado em 2022-07-16 20:01:00</small>
-            <p class="card-text">Uma Mensagem de Rebecca e Steve</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12 col-lg-6">
-        <div class="card h-100">
-          <img src="{% static 'images/tennocon-card.webp' %}" class="card-img-top" alt="Tenncon">
-          <div class="card-body">
-            <h4 class="card-title"><b>Recapitulação da TennoCon 2022</b></h4>
-            <small class="text-black-50">Publicado em 2022-07-16 19:49:00</small>
-            <p class="card-text">Todos os momentos importantes do maior dia do Warframe!</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-lg-6">
-        <div class="card h-100">
-          <img src="{% static 'images/khora-prime-card.webp' %}" class="card-img-top" alt="Khora Prime">
-          <div class="card-body">
-            <h4 class="card-title"><b>Prime Access da Khora Prime</b></h4>
-            <small class="text-black-50">Publicado em 2022-07-16 17:24:00</small>
-            <p class="card-text">Domine tudo com o mais recente Prime Access!</p>
-            <div class="float-end">
-              <span class="badge bg-secondary">PC</span>
-              <span class="badge bg-success">XBOX</span>
-              <span class="badge bg-primary">PSN</span>
-              <span class="badge bg-secondary">BLOG</span>
-              <span class="badge bg-danger">NINTENDO SWITCH</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12 col-lg-6">
-        <div class="card h-100">
-          <img src="{% static 'images/tenno-pc-card.webp' %}" class="card-img-top" alt="Sorteio">
-          <div class="card-body">
-            <h4 class="card-title"><b>Sorteio de PC Personalizado da Zariman do Warframe</b></h4>
-            <small class="text-black-50">Publicado em 2022-07-16 09:00:00</small>
-            <p class="card-text">Participe agora para ter a chance de ganhar</p>
-            <div class="float-end">
-              <span class="badge bg-secondary">PC</span>
-              <span class="badge bg-success">XBOX</span>
-              <span class="badge bg-primary">PSN</span>
-              <span class="badge bg-secondary">BLOG</span>
-              <span class="badge bg-danger">NINTENDO SWITCH</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-lg-6">
-        <div class="card h-100">
-          <img src="{% static 'images/artistic-community-card.webp' %}" class="card-img-top" alt="Exibição Artística">
-          <div class="card-body">
-            <h4 class="card-title"><b>TennoCon 2022: Exibição Artística da Comunidade</b></h4>
-            <small class="text-black-50">Publicado em 2022-07-14 10:36:00</small>
-            <p class="card-text">Apresentando a criatividade Tenno</p>
-            <div class="float-end">
-              <span class="badge bg-secondary">PC</span>
-              <span class="badge bg-success">XBOX</span>
-              <span class="badge bg-primary">PSN</span>
-              <span class="badge bg-secondary">BLOG</span>
-              <span class="badge bg-danger">NINTENDO SWITCH</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+</section>
 {% endblock %}

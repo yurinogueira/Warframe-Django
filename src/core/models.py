@@ -34,3 +34,36 @@ class Warframe(Orderable):
 
     def __str__(self) -> str:
         return str(self.name)
+
+
+class Badge(Orderable):
+    name = models.CharField("Nome", max_length=32)
+    css_class = models.CharField("Classe do CSS", max_length=64)
+
+    @property
+    def css_classes(self):
+        return f"badge {self.css_class}"
+
+    class Meta:
+        ordering = ("position",)
+        verbose_name = "Badge"
+        verbose_name_plural = "Badges"
+
+    def __str__(self) -> str:
+        return str(self.name)
+
+
+class Report(Orderable):
+    image = models.ForeignKey(Image, on_delete=models.CASCADE)
+    title = models.CharField("Título", max_length=128)
+    published_in = models.CharField("Publicação", max_length=64)
+    message = models.TextField("Mensagem")
+    badges = models.ManyToManyField(Badge)
+
+    class Meta:
+        ordering = ("position",)
+        verbose_name = "Notícia"
+        verbose_name_plural = "Notícias"
+
+    def __str__(self) -> str:
+        return str(self.title)

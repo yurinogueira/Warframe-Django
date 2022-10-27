@@ -15,7 +15,7 @@ stop:
 	docker-compose down
 
 down:
-	docker-compose down-volumes
+	docker-compose down --volumes
 
 bash:
 	docker-compose exec web bash
@@ -24,7 +24,7 @@ shell:
 	docker-compose exec web python manage.py shell
 
 loaddata:
-	docker-compose exec web python manage.py loaddata warframes
+	docker-compose exec web python manage.py loaddata warframes news
 
 migrate:
 	docker-compose exec web python manage.py migrate --noinput

@@ -1,4 +1,4 @@
-FROM python:3.10.6-alpine
+FROM python:3.11.0-alpine
 
 LABEL maintainer="yurinogueira@id.uff.br"
 LABEL vendor="Yuri Nogueira"
@@ -23,20 +23,15 @@ ENV TZ America/Sao_Paulo
 WORKDIR /usr/src/app
 COPY ./ /usr/src/app
 
+RUN apk update && \
+    apk add --virtual build-deps gcc musl-dev && \
+    apk add postgresql-dev
+
 # INSTALL DEPENDENCIES
 RUN pip3 install --no-cache --upgrade pip setuptools
 RUN pip3 install -r requirements.txt
 
 CMD gunicorn --bind 0.0.0.0:8000 \
-             --workers 3 \
-             --threads 2 \
-             --keep-alive 5 \
-             --max-requests 1000 \
-             --worker-connections=1000 \
-             --access-logfile - \
-             --error-logfile - \
-             --log-level critical \
-             --worker-class gevent \
              --reload \
              --capture-output \
              api.wsgi:application
