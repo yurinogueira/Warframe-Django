@@ -8,12 +8,1458 @@
     }
   },
   {
+    "model": "core.image",
+    "pk": 2,
+    "fields": {
+      "name": "Warframe Atlas Image",
+      "path": "images/warframes/atlas-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 3,
+    "fields": {
+      "name": "Warframe Banshee Image",
+      "path": "images/warframes/banshee-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 4,
+    "fields": {
+      "name": "Warframe Baruuk Image",
+      "path": "images/warframes/baruuk-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 5,
+    "fields": {
+      "name": "Warframe Caliban Image",
+      "path": "images/warframes/caliban-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 6,
+    "fields": {
+      "name": "Warframe Chroma Image",
+      "path": "images/warframes/chroma-w-card.webp"
+    }
+  },
+    {
+    "model": "core.image",
+    "pk": 7,
+    "fields": {
+      "name": "Warframe Ember Image",
+      "path": "images/warframes/ember-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 8,
+    "fields": {
+      "name": "Warframe Equinox Image",
+      "path": "images/warframes/equinox-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 9,
+    "fields": {
+      "name": "Warframe Excalibur Image",
+      "path": "images/warframes/excalibur-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 10,
+    "fields": {
+      "name": "Warframe Frost Image",
+      "path": "images/warframes/frost-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 11,
+    "fields": {
+      "name": "Warframe Gara Image",
+      "path": "images/warframes/gara-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 12,
+    "fields": {
+      "name": "Warframe Garuda Image",
+      "path": "images/warframes/garuda-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 13,
+    "fields": {
+      "name": "Warframe Gauss Image",
+      "path": "images/warframes/gauss-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 14,
+    "fields": {
+      "name": "Warframe Grendel Image",
+      "path": "images/warframes/grendel-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 15,
+    "fields": {
+      "name": "Warframe Gyre Image",
+      "path": "images/warframes/gyre-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 16,
+    "fields": {
+      "name": "Warframe Harrow Image",
+      "path": "images/warframes/harrow-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 17,
+    "fields": {
+      "name": "Warframe Hildryn Image",
+      "path": "images/warframes/hildryn-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 18,
+    "fields": {
+      "name": "Warframe Hydroid Image",
+      "path": "images/warframes/hydroid-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 19,
+    "fields": {
+      "name": "Warframe Inaros Image",
+      "path": "images/warframes/inaros-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 20,
+    "fields": {
+      "name": "Warframe Ivara Image",
+      "path": "images/warframes/ivara-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 21,
+    "fields": {
+      "name": "Warframe Khora Image",
+      "path": "images/warframes/khora-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 22,
+    "fields": {
+      "name": "Warframe Lavos Image",
+      "path": "images/warframes/lavos-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 23,
+    "fields": {
+      "name": "Warframe Limbo Image",
+      "path": "images/warframes/limbo-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 24,
+    "fields": {
+      "name": "Warframe Loki Image",
+      "path": "images/warframes/loki-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 25,
+    "fields": {
+      "name": "Warframe Mag Image",
+      "path": "images/warframes/mag-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 26,
+    "fields": {
+      "name": "Warframe Mesa Image",
+      "path": "images/warframes/mesa-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 27,
+    "fields": {
+      "name": "Warframe Mirage Image",
+      "path": "images/warframes/mirage-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 28,
+    "fields": {
+      "name": "Warframe Nekros Image",
+      "path": "images/warframes/nekros-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 29,
+    "fields": {
+      "name": "Warframe Nezha Image",
+      "path": "images/warframes/nezha-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 30,
+    "fields": {
+      "name": "Warframe Nidus Image",
+      "path": "images/warframes/nidus-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 31,
+    "fields": {
+      "name": "Warframe Nova Image",
+      "path": "images/warframes/nova-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 32,
+    "fields": {
+      "name": "Warframe Nyx Image",
+      "path": "images/warframes/nyx-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 33,
+    "fields": {
+      "name": "Warframe Oberon Image",
+      "path": "images/warframes/oberon-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 34,
+    "fields": {
+      "name": "Warframe Octavia Image",
+      "path": "images/warframes/octavia-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 35,
+    "fields": {
+      "name": "Warframe Protea Image",
+      "path": "images/warframes/protea-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 36,
+    "fields": {
+      "name": "Warframe Revenant Image",
+      "path": "images/warframes/revenant-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 37,
+    "fields": {
+      "name": "Warframe Rhino Image",
+      "path": "images/warframes/rhino-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 38,
+    "fields": {
+      "name": "Warframe Saryn Image",
+      "path": "images/warframes/saryn-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 39,
+    "fields": {
+      "name": "Warframe Sevagoth Image",
+      "path": "images/warframes/sevagoth-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 40,
+    "fields": {
+      "name": "Warframe Titania Image",
+      "path": "images/warframes/titania-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 41,
+    "fields": {
+      "name": "Warframe Trinity Image",
+      "path": "images/warframes/trinity-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 42,
+    "fields": {
+      "name": "Warframe Valkyr Image",
+      "path": "images/warframes/valkyr-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 43,
+    "fields": {
+      "name": "Warframe Vauban Image",
+      "path": "images/warframes/vauban-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 44,
+    "fields": {
+      "name": "Warframe Volt Image",
+      "path": "images/warframes/volt-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 45,
+    "fields": {
+      "name": "Warframe Wisp Image",
+      "path": "images/warframes/wisp-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 46,
+    "fields": {
+      "name": "Warframe Wukong Image",
+      "path": "images/warframes/wukong-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 47,
+    "fields": {
+      "name": "Warframe Xaku Image",
+      "path": "images/warframes/xaku-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 48,
+    "fields": {
+      "name": "Warframe Yareli Image",
+      "path": "images/warframes/yareli-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 49,
+    "fields": {
+      "name": "Warframe Zephyr Image",
+      "path": "images/warframes/zephyr-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 50,
+    "fields": {
+      "name": "Warframe Ash Prime Image",
+      "path": "images/warframes/ashprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 51,
+    "fields": {
+      "name": "Warframe Atlas Prime Image",
+      "path": "images/warframes/atlasprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 52,
+    "fields": {
+      "name": "Warframe Banshee Prime Image",
+      "path": "images/warframes/bansheeprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 53,
+    "fields": {
+      "name": "Warframe Chroma Prime Image",
+      "path": "images/warframes/chromaprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 54,
+    "fields": {
+      "name": "Warframe Ember Prime Image",
+      "path": "images/warframes/emberprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 55,
+    "fields": {
+      "name": "Warframe Equinox Prime Image",
+      "path": "images/warframes/equinoxprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 56,
+    "fields": {
+      "name": "Warframe Frost Prime Image",
+      "path": "images/warframes/frostprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 57,
+    "fields": {
+      "name": "Warframe Gara Prime Image",
+      "path": "images/warframes/garaprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 58,
+    "fields": {
+      "name": "Warframe Garuda Prime Image",
+      "path": "images/warframes/garudaprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 59,
+    "fields": {
+      "name": "Warframe Harrow Prime Image",
+      "path": "images/warframes/harrowprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 60,
+    "fields": {
+      "name": "Warframe Hydroid Prime Image",
+      "path": "images/warframes/hydroidprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 61,
+    "fields": {
+      "name": "Warframe Inaros Prime Image",
+      "path": "images/warframes/inarosprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 62,
+    "fields": {
+      "name": "Warframe Ivara Prime Image",
+      "path": "images/warframes/ivaraprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 63,
+    "fields": {
+      "name": "Warframe Khora Prime Image",
+      "path": "images/warframes/khoraprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 64,
+    "fields": {
+      "name": "Warframe Limbo Prime Image",
+      "path": "images/warframes/limboprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 65,
+    "fields": {
+      "name": "Warframe Loki Prime Image",
+      "path": "images/warframes/lokiprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 66,
+    "fields": {
+      "name": "Warframe Mag Prime Image",
+      "path": "images/warframes/magprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 67,
+    "fields": {
+      "name": "Warframe Mesa Prime Image",
+      "path": "images/warframes/mesaprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 68,
+    "fields": {
+      "name": "Warframe Mirage Prime Image",
+      "path": "images/warframes/mirageprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 69,
+    "fields": {
+      "name": "Warframe Nekros Prime Image",
+      "path": "images/warframes/nekrosprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 70,
+    "fields": {
+      "name": "Warframe Nezha Prime Image",
+      "path": "images/warframes/nezhaprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 71,
+    "fields": {
+      "name": "Warframe Nidus Prime Image",
+      "path": "images/warframes/nidusprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 72,
+    "fields": {
+      "name": "Warframe Nova Prime Image",
+      "path": "images/warframes/novaprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 73,
+    "fields": {
+      "name": "Warframe Nyx Prime Image",
+      "path": "images/warframes/nyxprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 74,
+    "fields": {
+      "name": "Warframe Oberon Prime Image",
+      "path": "images/warframes/oberonprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 75,
+    "fields": {
+      "name": "Warframe Octavia Prime Image",
+      "path": "images/warframes/octaviaprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 76,
+    "fields": {
+      "name": "Warframe Rhino Prime Image",
+      "path": "images/warframes/rhinoprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 77,
+    "fields": {
+      "name": "Warframe Saryn Prime Image",
+      "path": "images/warframes/sarynprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 78,
+    "fields": {
+      "name": "Warframe Titania Prime Image",
+      "path": "images/warframes/titaniaprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 79,
+    "fields": {
+      "name": "Warframe Trinity Prime Image",
+      "path": "images/warframes/trinityprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 80,
+    "fields": {
+      "name": "Warframe Valkyr Prime Image",
+      "path": "images/warframes/valkyrprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 81,
+    "fields": {
+      "name": "Warframe Vauban Prime Image",
+      "path": "images/warframes/vaubanprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 82,
+    "fields": {
+      "name": "Warframe Volt Prime Image",
+      "path": "images/warframes/voltprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 83,
+    "fields": {
+      "name": "Warframe Wukong Prime Image",
+      "path": "images/warframes/wukongprime-w-card.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 84,
+    "fields": {
+      "name": "Warframe Zephyr Prime Image",
+      "path": "images/warframes/zephyrprime-w-card.webp"
+    }
+  },
+  {
     "model": "core.warframe",
     "pk": 1,
     "fields": {
       "name": "ASH",
       "position": 1,
       "image": 1
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 2,
+    "fields": {
+      "name": "ATLAS",
+      "position": 2,
+      "image": 2
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 3,
+    "fields": {
+      "name": "BANSHEE",
+      "position": 3,
+      "image": 3
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 4,
+    "fields": {
+      "name": "BARUUK",
+      "position": 4,
+      "image": 4
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 5,
+    "fields": {
+      "name": "CALIBAN",
+      "position": 5,
+      "image": 5
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 6,
+    "fields": {
+      "name": "CHROMA",
+      "position": 6,
+      "image": 6
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 7,
+    "fields": {
+      "name": "EMBER",
+      "position": 7,
+      "image": 7
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 8,
+    "fields": {
+      "name": "EQUINOX",
+      "position": 8,
+      "image": 8
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 9,
+    "fields": {
+      "name": "EXCALIBUR",
+      "position": 9,
+      "image": 9
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 10,
+    "fields": {
+      "name": "FROST",
+      "position": 10,
+      "image": 10
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 11,
+    "fields": {
+      "name": "GARA",
+      "position": 11,
+      "image": 11
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 12,
+    "fields": {
+      "name": "GARUDA",
+      "position": 12,
+      "image": 12
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 13,
+    "fields": {
+      "name": "GAUSS",
+      "position": 13,
+      "image": 13
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 14,
+    "fields": {
+      "name": "GRENDEL",
+      "position": 14,
+      "image": 14
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 15,
+    "fields": {
+      "name": "GYRE",
+      "position": 15,
+      "image": 15
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 16,
+    "fields": {
+      "name": "HARROW",
+      "position": 16,
+      "image": 16
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 17,
+    "fields": {
+      "name": "HILDRYN",
+      "position": 17,
+      "image": 17
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 18,
+    "fields": {
+      "name": "HYDROID",
+      "position": 18,
+      "image": 18
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 19,
+    "fields": {
+      "name": "INAROS",
+      "position": 19,
+      "image": 19
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 20,
+    "fields": {
+      "name": "IVARA",
+      "position": 20,
+      "image": 20
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 21,
+    "fields": {
+      "name": "KHORA",
+      "position": 21,
+      "image": 21
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 22,
+    "fields": {
+      "name": "LAVOS",
+      "position": 22,
+      "image": 22
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 23,
+    "fields": {
+      "name": "LIMBO",
+      "position": 23,
+      "image": 23
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 24,
+    "fields": {
+      "name": "LOKI",
+      "position": 24,
+      "image": 24
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 25,
+    "fields": {
+      "name": "MAG",
+      "position": 25,
+      "image": 25
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 26,
+    "fields": {
+      "name": "MESA",
+      "position": 26,
+      "image": 26
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 27,
+    "fields": {
+      "name": "MIRAGE",
+      "position": 27,
+      "image": 27
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 28,
+    "fields": {
+      "name": "NEKROS",
+      "position": 28,
+      "image": 28
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 29,
+    "fields": {
+      "name": "NEZHA",
+      "position": 29,
+      "image": 29
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 30,
+    "fields": {
+      "name": "NIDUS",
+      "position": 30,
+      "image": 30
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 31,
+    "fields": {
+      "name": "NOVA",
+      "position": 31,
+      "image": 31
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 32,
+    "fields": {
+      "name": "NYX",
+      "position": 32,
+      "image": 32
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 33,
+    "fields": {
+      "name": "OBERON",
+      "position": 33,
+      "image": 33
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 34,
+    "fields": {
+      "name": "OCTAVIA",
+      "position": 34,
+      "image": 34
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 35,
+    "fields": {
+      "name": "PROTEA",
+      "position": 35,
+      "image": 35
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 36,
+    "fields": {
+      "name": "REVENANT",
+      "position": 36,
+      "image": 36
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 37,
+    "fields": {
+      "name": "RHINO",
+      "position": 37,
+      "image": 37
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 38,
+    "fields": {
+      "name": "SARYN",
+      "position": 38,
+      "image": 38
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 39,
+    "fields": {
+      "name": "SEVAGOTH",
+      "position": 39,
+      "image": 39
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 40,
+    "fields": {
+      "name": "TITANIA",
+      "position": 40,
+      "image": 40
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 41,
+    "fields": {
+      "name": "TRINITY",
+      "position": 41,
+      "image": 41
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 42,
+    "fields": {
+      "name": "VALKYR",
+      "position": 42,
+      "image": 42
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 43,
+    "fields": {
+      "name": "VAUBAN",
+      "position": 43,
+      "image": 43
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 44,
+    "fields": {
+      "name": "VOLT",
+      "position": 44,
+      "image": 44
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 45,
+    "fields": {
+      "name": "WISP",
+      "position": 45,
+      "image": 45
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 46,
+    "fields": {
+      "name": "WUKONG",
+      "position": 46,
+      "image": 46
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 47,
+    "fields": {
+      "name": "XAKU",
+      "position": 47,
+      "image": 47
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 48,
+    "fields": {
+      "name": "YARELI",
+      "position": 48,
+      "image": 48
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 49,
+    "fields": {
+      "name": "ZEPHYR",
+      "position": 49,
+      "image": 49
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 50,
+    "fields": {
+      "name": "ASH PRIME",
+      "position": 50,
+      "image": 50,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 51,
+    "fields": {
+      "name": "ATLAS PRIME",
+      "position": 51,
+      "image": 51,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 52,
+    "fields": {
+      "name": "BANSHEE PRIME",
+      "position": 52,
+      "image": 52,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 53,
+    "fields": {
+      "name": "CHROMA PRIME",
+      "position": 53,
+      "image": 53,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 54,
+    "fields": {
+      "name": "EMBER PRIME",
+      "position": 54,
+      "image": 54,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 55,
+    "fields": {
+      "name": "EQUINOX PRIME",
+      "position": 55,
+      "image": 55,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 56,
+    "fields": {
+      "name": "FROST PRIME",
+      "position": 56,
+      "image": 56,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 57,
+    "fields": {
+      "name": "GARA PRIME",
+      "position": 57,
+      "image": 57,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 58,
+    "fields": {
+      "name": "GARUDA PRIME",
+      "position": 58,
+      "image": 58,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 59,
+    "fields": {
+      "name": "HARROW PRIME",
+      "position": 59,
+      "image": 59,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 60,
+    "fields": {
+      "name": "HYDROID PRIME",
+      "position": 60,
+      "image": 60,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 61,
+    "fields": {
+      "name": "INAROS PRIME",
+      "position": 61,
+      "image": 61,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 62,
+    "fields": {
+      "name": "IVARA PRIME",
+      "position": 62,
+      "image": 62,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 63,
+    "fields": {
+      "name": "KHORA PRIME",
+      "position": 63,
+      "image": 63,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 64,
+    "fields": {
+      "name": "LIMBO PRIME",
+      "position": 64,
+      "image": 64,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 65,
+    "fields": {
+      "name": "LOKI PRIME",
+      "position": 65,
+      "image": 65,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 66,
+    "fields": {
+      "name": "MAG PRIME",
+      "position": 66,
+      "image": 66,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 67,
+    "fields": {
+      "name": "MESA PRIME",
+      "position": 67,
+      "image": 67,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 68,
+    "fields": {
+      "name": "MIRAGE PRIME",
+      "position": 68,
+      "image": 68,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 69,
+    "fields": {
+      "name": "NEKROS PRIME",
+      "position": 69,
+      "image": 69,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 70,
+    "fields": {
+      "name": "NEZHA PRIME",
+      "position": 70,
+      "image": 70,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 71,
+    "fields": {
+      "name": "NIDUS PRIME",
+      "position": 71,
+      "image": 71,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 72,
+    "fields": {
+      "name": "NOVA PRIME",
+      "position": 72,
+      "image": 72,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 73,
+    "fields": {
+      "name": "NYX PRIME",
+      "position": 73,
+      "image": 73,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 74,
+    "fields": {
+      "name": "OBERON PRIME",
+      "position": 74,
+      "image": 74,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 75,
+    "fields": {
+      "name": "OCTAVIA PRIME",
+      "position": 75,
+      "image": 75,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 76,
+    "fields": {
+      "name": "RHINO PRIME",
+      "position": 76,
+      "image": 76,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 77,
+    "fields": {
+      "name": "SARYN PRIME",
+      "position": 77,
+      "image": 77,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 78,
+    "fields": {
+      "name": "TITANIA PRIME",
+      "position": 78,
+      "image": 78,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 79,
+    "fields": {
+      "name": "TRINITY PRIME",
+      "position": 79,
+      "image": 79,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 80,
+    "fields": {
+      "name": "VALKYR PRIME",
+      "position": 80,
+      "image": 80,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 81,
+    "fields": {
+      "name": "VAUBAN PRIME",
+      "position": 81,
+      "image": 81,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 82,
+    "fields": {
+      "name": "VOLT PRIME",
+      "position": 82,
+      "image": 82,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 83,
+    "fields": {
+      "name": "WUKONG PRIME",
+      "position": 83,
+      "image": 83,
+      "warframe_type": "prime"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 84,
+    "fields": {
+      "name": "ZEPHYR PRIME",
+      "position": 84,
+      "image": 84,
+      "warframe_type": "prime"
     }
   }
 ]
