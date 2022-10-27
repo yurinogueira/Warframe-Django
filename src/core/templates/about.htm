@@ -1,0 +1,29 @@
+{% extends "base_generic.htm" %}
+{% load static %}
+
+{% block content %}
+<section class="center-page-image">
+    <img class="image-adjust" src="{% static 'images/about-background.webp' %}" alt="About background">
+    <div class="center-page-card mt--672">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Informações sobre o Projeto</h5>
+                <h6 class="card-subtitle mb-2 text-muted">O que é?</h6>
+                <p class="card-text">
+                    Projeto feito como parte da matéria de Desenvolvimento Web.
+                    Basicamente é a réplica do site do Warframe de 23/08/2022
+                    feita utilizando Bootstrap.
+                </p>
+                <h6 class="card-subtitle mb-2 text-muted">Componentes utilizados que não foram mencionados no curso</h6>
+                <ul class="list-group about-card text-center list-group-flush overflow-scroll">
+                    <li class="list-group-item">Badge</li>
+                    <li class="list-group-item">List group</li>
+                    <li class="list-group-item">OffCanvas</li>
+                    <li class="list-group-item">Progress</li>
+                    <li class="list-group-item">Toasts</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

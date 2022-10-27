@@ -1,0 +1,19 @@
+[
+  {
+    "model": "core.image",
+    "pk": 1,
+    "fields": {
+      "name": "Warframe Ash Image",
+      "path": "images/warframes/ash-w-card.webp"
+    }
+  },
+  {
+    "model": "core.warframe",
+    "pk": 1,
+    "fields": {
+      "name": "ASH",
+      "position": 1,
+      "image": 1
+    }
+  }
+]

@@ -1,14 +1,87 @@
 {% extends "base_generic.htm" %}
+{% load static %}
 
 {% block content %}
-  <h1>Local Library Home</h1>
-  <p>Welcome to LocalLibrary, a website developed by <em>Mozilla Developer Network</em>!</p>
-  <h2>Dynamic content</h2>
-  <p>The library has the following record counts:</p>
-  <ul>
-    <li><strong>Books:</strong> {{ num_books }}</li>
-    <li><strong>Copies:</strong> {{ num_instances }}</li>
-    <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
-    <li><strong>Authors:</strong> {{ num_authors }}</li>
-  </ul>
+<section class="center-page-image">
+    <video class="image-adjust" autoplay muted loop poster="{% static 'images/home-image.webp' %}">
+        <source src="{% static 'videos/home_zariman.webm' %}" type="video/webm" media="all and (min-width: 1440px)">
+        <source src="{% static 'videos/home_zariman_medium.webm' %}" type="video/webm">
+    </video>
+    <div class="center-page-card mt--672">
+        <div class="row text-center">
+            <div class="col">
+                <img src="{% static 'images/zariman-logo.webp' %}" class="small-adjustment" alt="Warframe Zariman">
+            </div>
+        </div>
+        <div class="row text-center w-100">
+            <div class="col-md-8 col-sm-12">
+                <a type="button" href="https://www.youtube.com/watch?v=0n6f--mi02A"
+                   class="btn red-button my-4 mx-2 w-100 h-50">
+                    ASSISTA AO TRAILER
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <a type="button"
+                   class="btn transparent-button my-4 mx-2 w-100 h-50"
+                   data-bs-toggle="offcanvas"
+                   href="#loginOffcanvas"
+                   role="button"
+                   aria-controls="loginOffcanvas">
+                    SAIBA MAIS
+                </a>
+            </div>
+        </div>
+        <div class="row text-center w-100">
+            <div class="col w-100">
+                <a href="{% url 'news' %}" class="link-light info-links">Conferir o Histórico de Atualizações</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mt--64px container">
+    <div class="row">
+        <div class="col-lg-8 col-12">
+            <img src="{% static 'images/tennocon.webp' %}" class="rounded mb-3 img-fluid" alt="Tennocon">
+        </div>
+        <div class="col-lg-4 col-12">
+            <div class="row-cols-1">
+                <img src="{% static 'images/team-change.webp' %}" class="rounded mb-3 img-fluid" alt="Transição de Equipe">
+            </div>
+            <div class="row-cols-1">
+                <img src="{% static 'images/tennogen.webp' %}" class="rounded img-fluid" alt="Tennogen">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container mt-2">
+    <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action">
+            <small>2022-08-16</small>
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1"><b>ÚLTIMA CHANCE PARA OBTER OS PACOTES DE SUPORTE DA NOVA GUERRA</b></h5>
+            </div>
+            <p class="mb-1">Economize na compra de Personalizações exclusivas antes que elas desapareçam</p>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+            <small>2022-08-03</small>
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1"><b>AS OFERTAS DO DARVO ESTÃO DE VOLTA</b></h5>
+            </div>
+            <p class="mb-1">Obtenha 25% de desconto na compra de Personalizações, Cosméticos e o Warframe Nidus</p>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+            <small>2022-07-11</small>
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1"><b>COMO APROVEITAR AO MÁXIMO A TENNOCON 2022</b></h5>
+            </div>
+            <p class="mb-1">7 passos simples para tornar essa TennoCon a melhor de todas</p>
+        </a>
+    </div>
+</section>
+
+<section class="container mt-3 text-center">
+    <a href="{% url 'news' %}" class="btn white-button px-5 py-2 mx-3">CONFERIR MAIS NOTÍCIAS</a>
+</section>
 {% endblock %}

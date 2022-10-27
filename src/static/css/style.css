@@ -1,0 +1,202 @@
+* {
+    font-family: "Noto Sans", sans-serif;
+}
+
+.default-color {
+    color: #C21700;
+}
+
+.white-button {
+    background-color: white;
+    border: 1px solid;
+    font-weight: bold;
+    text-align: center;
+    line-height: 32px;
+}
+
+.transparent-button {
+    background-color: transparent;
+    border: 1px solid;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    line-height: 32px;
+}
+.transparent-button:hover {
+    color: white;
+}
+
+.red-button {
+    background-color: #A40000;
+    border: none;
+    color: #FFFFFF;
+    font-weight: bold;
+    -webkit-transition: ease-out 1s;
+    -moz-transition: ease-out 1s;
+    transition: ease-out 1s;
+    text-align: center;
+    line-height: 32px;
+}
+.red-button:hover {
+    background-color: #790000;
+    color: #FFFFFF;
+    box-shadow: inset 400px 0 0 0 #C21700;
+}
+
+.mt--64px {
+    margin-top: -64px;
+}
+.mt-96px {
+    margin-top: 96px;
+}
+.mt--672 {
+    margin-top: -672px;
+}
+
+.center-page-image {
+    height: 896px;
+}
+.center-page-card {
+    position: relative;
+    left: 0;
+    z-index: 1;
+    margin-left: 256px;
+    width: 480px;
+}
+.image-adjust {
+    height: 896px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.about-card {
+    height: 160px;
+}
+
+.center-page-info {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0;
+    color: white;
+}
+.info-header {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+.carousel-image-adjust {
+    height: 576px;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+.carousel-caption-adjust {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 8px 16px 4px;
+    margin-bottom: 32px;
+    text-align: left;
+    width: 384px;
+}
+.warframe-carousel-indicators [data-bs-target] {
+    width: 14px;
+    height: 14px;
+    margin: 0 8px -12px;
+    transform: rotate(45deg);
+    transition: opacity .6s ease;
+}
+.warframe-draws {
+    margin-top: -32px;
+}
+.warframe-trapezoid {
+    border-bottom: 32px solid #C21700;
+    border-left: 32px solid transparent;
+    border-right: 32px solid transparent;
+    margin: auto;
+    width: 160px;
+    position: relative;
+    z-index: 1;
+}
+.warframe-line {
+    height: 8px;
+    background: #C21700;
+}
+
+.warframe-name {
+    border-bottom: 32px solid #C21700;
+    border-right: 32px solid transparent;
+    height: 32px;
+    margin-top: -32px;
+    width: 70%;
+}
+.warframe-name h5 {
+    line-height: 32px;
+    color: white;
+}
+
+.warframe-prime-name {
+    border-bottom: 32px solid #201e12;
+    border-right: 32px solid transparent;
+    height: 32px;
+    margin-top: -32px;
+}
+.warframe-prime-name h5 {
+    line-height: 32px;
+    color: #ecc051;
+    white-space: nowrap;
+}
+
+.login-canvas {
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.login-canvas-form {
+    background-color: black;
+}
+.login-canvas-form-form {
+    width: 50%;
+}
+.login-canvas-inputs {
+    border-radius: 0;
+    border-top: rgba(0, 0, 0, 0);
+    border-left: rgba(0, 0, 0, 0);
+    border-right: rgba(0, 0, 0, 0);
+    background-color: black;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.login-canvas-inputs::placeholder {
+    font-size: 12px;
+    color: gray;
+}
+.login-canvas-inputs:focus {
+    background-color: black;
+}
+
+@media (max-width: 576px) {
+    .carousel-caption-adjust {
+        width: 256px;
+    }
+    .center-page-card {
+        width: 90%;
+    }
+    .small-adjustment {
+        width: 80%;
+    }
+    .center-page-info {
+        width: 90%;
+    }
+    .login-canvas-form-form {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1399px) {
+    .center-page-card {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .login-canvas-form-form {
+        width: 60%;
+    }
+}

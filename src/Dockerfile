@@ -1,4 +1,4 @@
-FROM python:3.10-alpine
+FROM python:3.10.6-alpine
 
 LABEL maintainer="yurinogueira@id.uff.br"
 LABEL vendor="Yuri Nogueira"
@@ -26,9 +26,6 @@ COPY ./ /usr/src/app
 # INSTALL DEPENDENCIES
 RUN pip3 install --no-cache --upgrade pip setuptools
 RUN pip3 install -r requirements.txt
-
-# COLLECTSTATIC
-RUN python3 manage.py collectstatic --noinput
 
 CMD gunicorn --bind 0.0.0.0:8000 \
              --workers 3 \

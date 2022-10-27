@@ -1,0 +1,86 @@
+{% extends "base_generic.htm" %}
+{% load static %}
+
+{% block content %}
+<section>
+    <div id="warframeCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators warframe-carousel-indicators">
+            <button type="button" data-bs-target="#warframeCarousel" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Khora Prime"></button>
+            <button type="button" data-bs-target="#warframeCarousel" data-bs-slide-to="1" aria-label="Gire"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <video class="d-block carousel-image-adjust" autoplay muted loop
+                       poster="{% static 'images/khora-prime-card.webp' %}">
+                    <source src="{% static 'videos/khora_prime.webm' %}" type="video/webm">
+                </video>
+                <div class="carousel-caption carousel-caption-adjust">
+                    <h1><b class="default-color">KHORA PRIME</b></h1>
+                    <p><b>
+                        A relação harmônica perfeita entre mestra e monstro.
+                        A caçadora áurea e sua leal Kavat, Venari, dominam o campo de batalha com seus anseios.
+                    </b></p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <video class="d-block carousel-image-adjust" autoplay muted loop
+                       poster="{% static 'images/gyre.webp' %}">
+                    <source src="{% static 'videos/gyre.webm' %}" type="video/webm">
+                </video>
+                <div class="carousel-caption carousel-caption-adjust">
+                    <h1><b class="default-color">GYRE</b></h1>
+                    <p><b>
+                        A Gyre incorpora uma teoria elegante: aniquila inimigos com a condutividade de bobinas e
+                        transmissores.
+                    </b></p>
+                </div>
+            </div>
+        </div>
+        <div class="warframe-draws">
+            <div class="warframe-trapezoid"></div>
+            <div class="warframe-line"></div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="text-center mt-5 mb-3">
+            <h4><b class="default-color">WARFRAMES</b></h4>
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4">
+            {% for warframe in c_warframes %}
+            <div class="col">
+                <div class="card">
+                    <img src="{% static warframe.image.path %}"
+                         class="card-img-top img-fluid"
+                         alt="{{ warframe.image.name }}">
+                    <div class="warframe-name">
+                        <h5 class="mx-2"><b>{{ warframe.name }}</b></h5>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="container">
+        <div class="text-center mt-5 mb-3">
+            <h4><b class="default-color">PRIMES</b></h4>
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4">
+            {% for warframe in p_warframes %}
+            <div class="col">
+                <div class="card">
+                    <img src="{% static warframe.image.path %}"
+                         class="card-img-top img-fluid"
+                         alt="{{ warframe.image.name }}">
+                    <div class="warframe-prime-name">
+                        <h5 class="mx-2"><b>{{ warframe.name }}</b></h5>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

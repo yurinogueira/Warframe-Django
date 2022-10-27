@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
-import urllib.parse
 
 from django.core.management.utils import get_random_secret_key
 
@@ -146,10 +145,11 @@ USE_TZ = True
 
 # DIRECTORY SETTINGS
 # ---------------------------------------------------------------------------------------------------------------------
-STATIC_URL = urllib.parse.urljoin(env.str("STATIC_HOST", default=""), "/static/")
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "images")]
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATIC_URL = "/static/"
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "")
+]
 
 MEDIA_HOST = env.str("MEDIA_HOST", default="")
 MEDIA_URL = env.str("MEDIA_URL", default="/media/")
