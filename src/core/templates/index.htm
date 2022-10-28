@@ -41,43 +41,32 @@
 
 <section class="mt--64px container">
     <div class="row">
+        {% for image in home_images %}
         <div class="col-lg-8 col-12">
-            <img src="{% static 'images/tennocon.webp' %}" class="rounded mb-3 img-fluid" alt="Tennocon">
+            <img src="{% static image.image.path %}" class="rounded mb-3 img-fluid" alt="{{ image.image.name }}">
         </div>
+        {% endfor %}
         <div class="col-lg-4 col-12">
+            {% for sub_image in home_sub_images %}
             <div class="row-cols-1">
-                <img src="{% static 'images/team-change.webp' %}" class="rounded mb-3 img-fluid" alt="Transição de Equipe">
+                <img src="{% static sub_image.image.path %}" class="rounded mb-3 img-fluid" alt="{{ sub_image.image.name }}">
             </div>
-            <div class="row-cols-1">
-                <img src="{% static 'images/tennogen.webp' %}" class="rounded img-fluid" alt="Tennogen">
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
 
 <section class="container mt-2">
     <div class="list-group">
+        {% for item in home_items %}
         <a href="#" class="list-group-item list-group-item-action">
-            <small>2022-08-16</small>
+            <small>{{ item.published_in }}</small>
             <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1"><b>ÚLTIMA CHANCE PARA OBTER OS PACOTES DE SUPORTE DA NOVA GUERRA</b></h5>
+                <h5 class="mb-1"><b>{{ item.title }}</b></h5>
             </div>
-            <p class="mb-1">Economize na compra de Personalizações exclusivas antes que elas desapareçam</p>
+            <p class="mb-1">{{ item.sub_title }}</p>
         </a>
-        <a href="#" class="list-group-item list-group-item-action">
-            <small>2022-08-03</small>
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1"><b>AS OFERTAS DO DARVO ESTÃO DE VOLTA</b></h5>
-            </div>
-            <p class="mb-1">Obtenha 25% de desconto na compra de Personalizações, Cosméticos e o Warframe Nidus</p>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action">
-            <small>2022-07-11</small>
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1"><b>COMO APROVEITAR AO MÁXIMO A TENNOCON 2022</b></h5>
-            </div>
-            <p class="mb-1">7 passos simples para tornar essa TennoCon a melhor de todas</p>
-        </a>
+        {% endfor %}
     </div>
 </section>
 

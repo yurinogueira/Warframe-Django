@@ -37,34 +37,12 @@
             </p>
             <div class="mt-4 collapse" id="autonomy-downloads">
                 <ul class="m-auto list-inline">
+                    {% for item in download_items %}
                     <li class="list-inline-item">
-                        <span class="text-danger">Warframe.2022.07.25.16.59.b00</span>
-                        (Tamanho: 2GB MD5: A44F6E0ACB997385D6490E0D396E45FE)
+                        <span class="text-danger">{{ item.title }}</span>
+                        {{ item.sub_title }}
                     </li>
-                    <li class="list-inline-item">
-                        <span class="text-danger">Warframe.2022.07.25.16.59.b01</span>
-                        (Tamanho: 2GB MD5: 67D1C4F4593EF8F87360A7387ADB8D4D)
-                    </li>
-                    <li class="list-inline-item">
-                        <span class="text-danger">Warframe.2022.07.25.16.59.b02</span>
-                        (Tamanho: 2GB MD5: 1B7F12DAFF1B3D9D974071B52126C1CF)
-                    </li>
-                    <li class="list-inline-item">
-                        <span class="text-danger">Warframe.2022.07.25.16.59.b03</span>
-                        (Tamanho: 2GB MD5: E2FC1053A2C90BF2C2E1E4B0FCE8792A)
-                    </li>
-                    <li class="list-inline-item">
-                        <span class="text-danger">Warframe.2022.07.25.16.59.b04</span>
-                        (Tamanho: 2GB MD5: 2826CBB0555923E52E173F6D8D1E2D03)
-                    </li>
-                    <li class="list-inline-item">
-                        <span class="text-danger">Warframe.2022.07.25.16.59.b05</span>
-                        (Tamanho: 2GB MD5: C8B973720D1F1A67C8439A1CDC44DD37)
-                    </li>
-                    <li class="list-inline-item">
-                        <span class="text-danger">Warframe.2022.07.25.16.59</span>
-                        (Tamanho: 68.79MB MD5: 43F0A2E7089E166DB4BCD8EB339DD9B0)
-                    </li>
+                    {% endfor %}
                 </ul>
             </div>
 

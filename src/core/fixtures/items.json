@@ -1,0 +1,181 @@
+[
+  {
+    "model": "core.listitem",
+    "pk": 1,
+    "fields": {
+      "title": "ÚLTIMA CHANCE PARA OBTER OS PACOTES DE SUPORTE DA NOVA GUERRA",
+      "sub_title": "Economize na compra de Personalizações exclusivas antes que elas desapareçam",
+      "published_in": "2022-08-16",
+      "position": 0,
+      "item_type": "hg"
+    }
+  },
+  {
+    "model": "core.listitem",
+    "pk": 2,
+    "fields": {
+      "title": "AS OFERTAS DO DARVO ESTÃO DE VOLTA",
+      "sub_title": "Obtenha 25% de desconto na compra de Personalizações, Cosméticos e o Warframe Nidus",
+      "published_in": "2022-08-03",
+      "position": 1,
+      "item_type": "hg"
+    }
+  },
+  {
+    "model": "core.listitem",
+    "pk": 3,
+    "fields": {
+      "title": "COMO APROVEITAR AO MÁXIMO A TENNOCON 2022",
+      "sub_title": "7 passos simples para tornar essa TennoCon a melhor de todas",
+      "published_in": "2022-07-11",
+      "position": 2,
+      "item_type": "hg"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 93,
+    "fields": {
+      "name": "Tennocon",
+      "path": "images/tennocon.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 94,
+    "fields": {
+      "name": "Transição de Equipe",
+      "path": "images/team-change.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 95,
+    "fields": {
+      "name": "Tennogen",
+      "path": "images/tennogen.webp"
+    }
+  },
+  {
+    "model": "core.listitem",
+    "pk": 4,
+    "fields": {
+      "image": 93,
+      "position": 0,
+      "item_type": "hi"
+    }
+  },
+  {
+    "model": "core.listitem",
+    "pk": 5,
+    "fields": {
+      "image": 94,
+      "position": 0,
+      "item_type": "hsi"
+    }
+  },
+  {
+    "model": "core.listitem",
+    "pk": 6,
+    "fields": {
+      "image": 95,
+      "position": 1,
+      "item_type": "hsi"
+    }
+  },
+  {
+    "model": "core.listitem",
+    "pk": 7,
+    "fields": {
+      "title": "Badge",
+      "position": 0,
+      "item_type": "ai"
+    }
+  },
+  {
+    "model": "core.listitem",
+    "pk": 8,
+    "fields": {
+      "title": "List group",
+      "position": 1,
+      "item_type": "ai"
+    }
+  },
+  {
+    "model": "core.listitem",
+    "pk": 9,
+    "fields": {
+      "title": "OffCanvas",
+      "position": 2,
+      "item_type": "ai"
+    }
+  },
+  {
+    "model": "core.listitem",
+    "pk": 10,
+    "fields": {
+      "title": "Progress",
+      "position": 3,
+      "item_type": "ai"
+    }
+  },
+  {
+    "model": "core.listitem",
+    "pk": 11,
+    "fields": {
+      "title": "Toasts",
+      "position": 4,
+      "item_type": "ai"
+    }
+  },
+  {
+    "model": "core.listitem",
+    "pk": 12,
+    "fields": {
+      "title": "Warframe.2022.07.25.16.59.b00",
+      "sub_title": "(Tamanho: 2GB MD5: A44F6E0ACB997385D6490E0D396E45FE)",
+      "position": 0,
+      "item_type": "di"
+    }
+  },
+  {
+    "model": "core.listitem",
+    "pk": 13,
+    "fields": {
+      "title": "Warframe.2022.07.25.16.59.b01",
+      "sub_title": "(Tamanho: 2GB MD5: 67D1C4F4593EF8F87360A7387ADB8D4D)",
+      "position": 1,
+      "item_type": "di"
+    }
+  },
+  {
+    "model": "core.listitem",
+    "pk": 14,
+    "fields": {
+      "title": "Warframe.2022.07.25.16.59.b02",
+      "sub_title": "(Tamanho: 2GB MD5: 1B7F12DAFF1B3D9D974071B52126C1CF)",
+      "position": 2,
+      "item_type": "di"
+    }
+  },
+  {
+    "model": "core.listitem",
+    "pk": 15,
+    "fields": {
+      "title": "Warframe.2022.07.25.16.59.b03",
+      "sub_title": "(Tamanho: 2GB MD5: E2FC1053A2C90BF2C2E1E4B0FCE8792A)",
+      "position": 3,
+      "item_type": "di"
+    }
+  },
+  {
+    "model": "core.listitem",
+    "pk": 16,
+    "fields": {
+      "title": "Warframe.2022.07.25.16.59",
+      "sub_title": "(Tamanho: 68.79MB MD5: 43F0A2E7089E166DB4BCD8EB339DD9B0)",
+      "position": 4,
+      "item_type": "di"
+    }
+  }
+]

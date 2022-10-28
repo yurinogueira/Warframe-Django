@@ -1,36 +1,31 @@
 from django.shortcuts import render
 
-from core.choices import COMMON, PRIME
-# Create your views here.
-from core.models import Image, Report, Warframe
+from core.choices import COMMON, PRIME, HOME_ITEM, HOME_IMAGE, HOME_SUB_IMAGE, ABOUT_ITEM, DOWNLOAD_ITEM
+from core.models import Image, ListItem, Report, Warframe
 
 
 def index(request):
-    """View function for home page of site."""
-
-    # Generate counts of some of the main objects
-    images = Image.objects.all().count()
+    home_items = ListItem.objects.filter(item_type=HOME_ITEM)
+    home_images = ListItem.objects.select_related("image").filter(item_type=HOME_IMAGE)
+    home_sub_images = ListItem.objects.select_related("image").filter(item_type=HOME_SUB_IMAGE)
 
     context = {
-        'num_images': images,
+        "home_items": home_items,
+        "home_images": home_images,
+        "home_sub_images": home_sub_images
     }
 
-    # Render the HTML template index.htm with the data in the context variable
-    return render(request, 'index.htm', context=context)
+    return render(request, "index.htm", context=context)
 
 
 def about(request):
-    """View function for home page of site."""
-
-    # Generate counts of some of the main objects
-    images = Image.objects.all().count()
+    about_items = ListItem.objects.filter(item_type=ABOUT_ITEM)
 
     context = {
-        'num_images': images,
+        "about_items": about_items,
     }
 
-    # Render the HTML template index.htm with the data in the context variable
-    return render(request, 'about.htm', context=context)
+    return render(request, "about.htm", context=context)
 
 
 def news(request):
@@ -56,14 +51,10 @@ def warframes(request):
 
 
 def downloads(request):
-    """View function for home page of site."""
-
-    # Generate counts of some of the main objects
-    images = Image.objects.all().count()
+    download_items = ListItem.objects.filter(item_type=DOWNLOAD_ITEM)
 
     context = {
-        'num_images': images,
+        "download_items": download_items,
     }
 
-    # Render the HTML template index.htm with the data in the context variable
-    return render(request, 'downloads.htm', context=context)
+    return render(request, "downloads.htm", context=context)

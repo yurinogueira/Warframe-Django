@@ -1,7 +1,7 @@
 from django.db import models
 
 from core.behaviors import Orderable
-from core.choices import WARFRAME_TYPE, COMMON
+from core.choices import WARFRAME_TYPE, COMMON, ITEM_TYPE, HOME_ITEM
 
 
 class Image(models.Model):
@@ -67,3 +67,25 @@ class Report(Orderable):
 
     def __str__(self) -> str:
         return str(self.title)
+
+
+class ListItem(Orderable):
+    title = models.CharField("Título", max_length=128, null=True, blank=True)
+    sub_title = models.CharField("Título", max_length=128, null=True, blank=True)
+    published_in = models.CharField("Publicação", max_length=64, null=True, blank=True)
+    image = models.ForeignKey(Image, on_delete=models.CASCADE, null=True, blank=True)
+    item_type = models.CharField(
+        max_length=8,
+        choices=ITEM_TYPE,
+        default=HOME_ITEM,
+        verbose_name="Tipo de Item",
+    )
+
+    class Meta:
+        ordering = ("position",)
+        verbose_name = "Item"
+        verbose_name_plural = "Items"
+
+    def __str__(self) -> str:
+        return str(self.title)
+

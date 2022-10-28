@@ -16,11 +16,9 @@
                 </p>
                 <h6 class="card-subtitle mb-2 text-muted">Componentes utilizados que não foram mencionados no curso</h6>
                 <ul class="list-group about-card text-center list-group-flush overflow-scroll">
-                    <li class="list-group-item">Badge</li>
-                    <li class="list-group-item">List group</li>
-                    <li class="list-group-item">OffCanvas</li>
-                    <li class="list-group-item">Progress</li>
-                    <li class="list-group-item">Toasts</li>
+                    {% for item in about_items %}
+                    <li class="list-group-item">{{ item.title }}</li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>
