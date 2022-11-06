@@ -9,9 +9,6 @@ from user.validators import validate_cpf
 
 
 class UserLoginForm(AuthenticationForm):
-    def __init__(self, *args, **kwargs):
-        super(UserLoginForm, self).__init__(*args, **kwargs)
-
     username = UsernameField(
         widget=forms.TextInput(
             attrs={
@@ -28,6 +25,9 @@ class UserLoginForm(AuthenticationForm):
             }
         )
     )
+
+    def __init__(self, *args, **kwargs):
+        super(UserLoginForm, self).__init__(*args, **kwargs)
 
 
 class UserRegisterForm(forms.ModelForm):
