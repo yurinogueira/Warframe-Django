@@ -44,6 +44,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.postgres",
     "core",
+    "category",
+    "product",
+    "user",
 ]
 
 MIDDLEWARE = [
@@ -130,6 +133,8 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
+AUTH_USER_MODEL = "user.User"
+USER_MODEL_NAME = "user"
 
 
 # Internationalization

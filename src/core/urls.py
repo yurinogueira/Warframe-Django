@@ -7,4 +7,5 @@ urlpatterns = [
     path("news", views.news, name="news"),
     path("downloads", views.downloads, name="downloads"),
     path("warframes", views.warframes, name="warframes"),
+    path("register", views.register, name="register"),
 ]
