@@ -31,6 +31,5 @@ favicon = RedirectView.as_view(url=staticfiles_storage.url("favicon.ico"))
 urlpatterns = [
     path("admin/", admin.site.urls),
     # CORE
-    path("core/", include(("core.urls", "core")), name="core"),
-    path("", RedirectView.as_view(url="core/")),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path("", include(("core.urls", "core")), name="core"),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

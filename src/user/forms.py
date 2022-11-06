@@ -1,9 +1,33 @@
 import re
 
 from django import forms
+from django.contrib.auth.forms import AuthenticationForm, UsernameField
+from django.utils.text import slugify
 
 from user.models import User
 from user.validators import validate_cpf
+
+
+class UserLoginForm(AuthenticationForm):
+    def __init__(self, *args, **kwargs):
+        super(UserLoginForm, self).__init__(*args, **kwargs)
+
+    username = UsernameField(
+        widget=forms.TextInput(
+            attrs={
+                "class": "form-control login-canvas-inputs m-auto",
+                "placeholder": "Insira seu E-mail",
+            }
+        )
+    )
+    password = forms.CharField(
+        widget=forms.PasswordInput(
+            attrs={
+                "placeholder": "Insira sua senha",
+                "class": "form-control login-canvas-inputs mt-3 m-auto",
+            }
+        )
+    )
 
 
 class UserRegisterForm(forms.ModelForm):
@@ -72,6 +96,18 @@ class UserRegisterForm(forms.ModelForm):
             "cpf",
             "password",
         )
+
+    def save(self, commit=True):
+        email = self.cleaned_data.get("email")
+        password = self.cleaned_data.get("password")
+
+        email = User.objects.normalize_email(email)
+
+        self.instance.email = email
+        self.instance.username = slugify(email)
+        self.instance.set_password(password)
+
+        return super(UserRegisterForm, self).save(commit)
 
     def clean_email(self) -> str:
         cleaned_data = self.cleaned_data.get("email", "")

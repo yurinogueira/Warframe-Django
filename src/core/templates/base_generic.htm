@@ -16,9 +16,13 @@
   <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function () {
       var registering = "{{ registering }}";
-        if (!!registering) {
-          openRegisterAndCloseLogin();
-        }
+      if (!!registering) {
+        openRegisterAndCloseLogin();
+      }
+      var logining = "{{ logining }}";
+      if (!!logining) {
+        openLoginAndCloseRegister();
+      }
     });
   </script>
 </head>
@@ -123,21 +127,30 @@
               <div class="col-12 col-sm-10 col-md-8 col-lg-7 col-xl-6 mt-5 m-auto login-canvas-form">
                 <div class="text-center m-auto my-5" style="width: 90%">
                   <h4 class="text-white m-auto my-2">ENTRAR COM</h4>
-                  <form class="login-canvas-form-form m-auto">
-                    <input type="email"
-                           class="form-control login-canvas-inputs m-auto"
-                           id="emailInput"
-                           placeholder="Endereço de E-mail">
-                    <input type="password"
-                           class="form-control login-canvas-inputs mt-3 m-auto"
-                           id="password"
-                           placeholder="Senha">
-                    <a type="button"
+                  <form method="post"
+                        action="{% url 'core:login' %}"
+                        class="login-canvas-form-form m-auto"
+                        novalidate>
+                    {% csrf_token %}
+                    {% if user_password %}
+                    <div><div class="text-danger">{{ user_password }}</div></div>
+                    {% endif %}
+                    {% for field in login_form %}
+                      {{ field }}
+                      {% if field.errors %}
+                        <div>
+                        {% for error in field.errors %}
+                          <div class="text-danger">{{ error|escape }}</div>
+                        {% endfor %}
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                    <button type="submit"
                        data-bs-dismiss="offcanvas"
                        aria-label="Close"
                        class="btn red-button my-4 w-100 m-auto">
                       ENTRAR
-                    </a>
+                    </button>
                   </form>
                   <h4 class="text-white m-auto">OU</h4>
                   <form class="login-canvas-form-form my-4 m-auto">
@@ -222,6 +235,14 @@
                 </a>
               </li>
 
+              {% if user.is_authenticated %}
+              <li class="nav-item text-center mt-1">
+                <a class="btn white-button header-white-button mx-3 mb-1 mb-xl-0 px-4"
+                   href="{% url 'core:logout' %}">
+                  <img class="pb-1" src="{% static 'images/login-icon.svg' %}" alt="Entrar"> SAIR
+                </a>
+              </li>
+              {% else %}
               <li class="nav-item text-center mt-1">
                 <a class="btn white-button header-white-button mx-3 mb-1 mb-xl-0 px-4"
                    data-bs-toggle="offcanvas"
@@ -240,6 +261,7 @@
                   JOGUE GRATUITAMENTE AGORA MESMO
                 </a>
               </li>
+              {% endif %}
             </ul>
           </div>
         </div>

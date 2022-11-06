@@ -16,6 +16,12 @@ function openToast(
     toast.show();
 }
 
+function openLoginAndCloseRegister() {
+    let loginOffCanvasElement = document.getElementById("loginOffcanvas");
+    let loginOffCanvas = new bootstrap.Offcanvas(loginOffCanvasElement);
+    loginOffCanvas.show();
+}
+
 function openRegisterAndCloseLogin() {
     let loginOffCanvasElement = document.getElementById("registerOffcanvas");
     let loginOffCanvas = new bootstrap.Offcanvas(loginOffCanvasElement);
