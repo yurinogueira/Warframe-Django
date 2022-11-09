@@ -236,6 +236,12 @@
               </li>
 
               {% if user.is_authenticated %}
+              <li class="nav-item nav-item-lined">
+                <a class="pb-2 pt-3 nav-link" href="{% url 'market:index' %}">
+                  Market
+                </a>
+              </li>
+
               <li class="nav-item text-center mt-1">
                 <a class="btn white-button header-white-button mx-3 mb-1 mb-xl-0 px-4"
                    href="{% url 'core:logout' %}">

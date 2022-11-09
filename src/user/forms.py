@@ -12,7 +12,7 @@ class UserLoginForm(AuthenticationForm):
     username = UsernameField(
         widget=forms.TextInput(
             attrs={
-                "class": "form-control login-canvas-inputs m-auto",
+                "class": "form-control login-canvas-inputs m-auto text-white",
                 "placeholder": "Insira seu E-mail",
             }
         )
@@ -21,7 +21,7 @@ class UserLoginForm(AuthenticationForm):
         widget=forms.PasswordInput(
             attrs={
                 "placeholder": "Insira sua senha",
-                "class": "form-control login-canvas-inputs mt-3 m-auto",
+                "class": "form-control login-canvas-inputs mt-3 m-auto text-white",
             }
         )
     )
@@ -41,7 +41,7 @@ class UserRegisterForm(forms.ModelForm):
         widget=forms.widgets.EmailInput(
             attrs={
                 "placeholder": "Endereço de E-mail",
-                "class": "form-control login-canvas-inputs m-auto",
+                "class": "form-control login-canvas-inputs m-auto text-white",
             }
         ),
         label="",
@@ -51,7 +51,7 @@ class UserRegisterForm(forms.ModelForm):
         widget=forms.widgets.TextInput(
             attrs={
                 "placeholder": "Nome",
-                "class": "form-control login-canvas-inputs m-auto",
+                "class": "form-control login-canvas-inputs m-auto text-white",
             }
         ),
         label="",
@@ -61,17 +61,20 @@ class UserRegisterForm(forms.ModelForm):
         widget=forms.widgets.TextInput(
             attrs={
                 "placeholder": "Sobrenome",
-                "class": "form-control login-canvas-inputs m-auto",
+                "class": "form-control login-canvas-inputs m-auto text-white",
             }
         ),
         label="",
     )
     cpf = forms.CharField(
-        error_messages={"required": "Campo obrigatório"},
+        error_messages={
+            "required": "Campo obrigatório",
+            "unique": "CPF já cadastrado",
+        },
         widget=forms.widgets.TextInput(
             attrs={
                 "placeholder": "CPF",
-                "class": "form-control login-canvas-inputs m-auto",
+                "class": "form-control login-canvas-inputs m-auto text-white",
             }
         ),
         label="",
@@ -81,7 +84,7 @@ class UserRegisterForm(forms.ModelForm):
         widget=forms.widgets.PasswordInput(
             attrs={
                 "placeholder": "Senha",
-                "class": "form-control login-canvas-inputs m-auto",
+                "class": "form-control login-canvas-inputs m-auto text-white",
             }
         ),
         label="",

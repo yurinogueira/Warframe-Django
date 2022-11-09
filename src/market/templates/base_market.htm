@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block title %}<title>Warframe Market</title>{% endblock %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Add additional CSS in static file -->
+  {% load static %}
+  <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+  <link rel="stylesheet" href="{% static 'css/header.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'js/utils.js' %}"></script>
+</head>
+<body>
+    <header>
+      <nav class="navbar navbar-expand-xl fixed-top bg-dark pb-0">
+        <div class="container-fluid">
+          <a class="navbar-brand px-4 pb-1" href="{% url 'core:index' %}">
+            <img src="{% static 'images/logo-market.webp' %}"
+                 alt="Logo do Warframe"
+                 class="d-inline-block align-text-top mb-2">
+          </a>
+          <a class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+            <img alt="Toggle Menu Icon" src="{% static 'images/menu-icon.svg' %}">
+          </a>
+          <div class="justify-content-end collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <li class="nav-item text-center mt-1">
+                <a class="btn white-button header-white-button mx-3 mb-1 mb-xl-0 px-4"
+                   href="{% url 'core:logout' %}">
+                  <img class="pb-1" src="{% static 'images/login-icon.svg' %}" alt="Entrar"> SAIR
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+      <div class="position-fixed end-0 top-50 p-3">
+        <div id="baseToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <strong class="me-auto" id="toastTitle">x</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body">
+            <a class="link-danger" id="toastLink" href="#">
+              x
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+      <section class="container text-center mt-2">
+        <div class="row">
+          <div class="col">
+            <img src="{% static 'images/warframe-logo.webp' %}" alt="Warframe Logo">
+          </div>
+        </div>
+        <div class="d-lg-inline-flex d-sm-grid">
+          <div class="p-2">
+            <a href="#"
+               class="link-dark text-decoration-none"
+               onclick="openToast(
+                 'baseToast',
+                 'Suporte',
+                 'https://www.warframe.com/pt-br/zendesk',
+                 'Acesse o suporte clicando aqui'
+               )">
+              <strong>Suporte</strong>
+            </a>
+          </div>
+          <div class="p-2">
+            <a href="#"
+               class="link-dark text-decoration-none"
+               onclick="openToast(
+                 'baseToast',
+                 'Imprensa',
+                 'https://www.digitalextremes.com/',
+                 'Acesse informações sobre a imprensa clicando aqui'
+               )">
+              <strong>Imprensa</strong>
+            </a>
+          </div>
+          <div class="p-2">
+            <a href="#"
+               class="link-dark text-decoration-none"
+               onclick="openToast(
+                 'baseToast',
+                 'Termos de Uso',
+                 'https://www.warframe.com/pt-br/terms/',
+                 'Acesse os Termos de Uso clicando aqui'
+               )">
+              <strong>Termos de Uso</strong>
+            </a>
+          </div>
+          <div class="p-2">
+            <a href="#"
+               class="link-dark text-decoration-none"
+               onclick="openToast(
+                 'baseToast',
+                 'Política de Privacidade',
+                 'https://www.warframe.com/pt-br/privacy/',
+                 'Acesse a Política de Privacidade clicando aqui'
+               )">
+              <strong>Política de Privacidade</strong>
+            </a>
+          </div>
+          <div class="p-2">
+            <a href="#"
+               class="link-dark text-decoration-none"
+               onclick="openToast(
+                 'baseToast',
+                 'Acordo de Licença do Usuário Final (EULA)',
+                 'https://www.warframe.com/pt-br/eula/',
+                 'Acesse o Acordo de Licença do Usuário Final (EULA) aqui'
+               )">
+              <strong>Acordo de Licença do Usuário Final (EULA)</strong>
+            </a>
+          </div>
+          <div class="p-2">
+            <a href="#"
+               class="link-dark text-decoration-none"
+               onclick="openToast(
+                 'baseToast',
+                 'Configurações de Cookies',
+                 '#',
+                 'Não possuimos cookies!'
+               )">
+              <strong>Configurações de Cookies</strong>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div class="contacts-container">
+        <section class="container text-center">
+          <a type="button" class="btn btn-circle" href="https://www.facebook.com/PlayWarframe/" target="_blank">
+            <img class="img-fluid" src="{% static 'images/facebook.svg' %}" alt="Facebook">
+          </a>
+          <a type="button" class="btn btn-circle" href="https://twitter.com/playwarframe" target="_blank">
+            <img class="img-fluid" src="{% static 'images/twitter.svg' %}" alt="Twitter">
+          </a>
+          <a type="button" class="btn btn-circle" href="https://www.youtube.com/user/playwarframe" target="_blank">
+            <img class="img-fluid" src="{% static 'images/youtube.svg' %}" alt="Youtube">
+          </a>
+          <a type="button" class="btn btn-circle" href="https://www.instagram.com/playwarframe/" target="_blank">
+            <img class="img-fluid" src="{% static 'images/instagram.svg' %}" alt="Instagram">
+          </a>
+          <a type="button" class="btn btn-circle" href="https://www.twitch.tv/warframe" target="_blank">
+            <img class="img-fluid" src="{% static 'images/twitch.svg' %}" alt="Twitch">
+          </a>
+          <a type="button" class="btn btn-circle" href="https://www.reddit.com/r/warframe" target="_blank">
+            <img class="img-fluid" src="{% static 'images/reddit.svg' %}" alt="Reddit">
+          </a>
+          <a type="button" class="btn btn-circle" href="https://discord.com/invite/playwarframe" target="_blank">
+            <img class="img-fluid" src="{% static 'images/discord.svg' %}" alt="Discord">
+          </a>
+        </section>
+
+        <section class="container text-center mt-4 mb-4">
+          <div class="card m-auto age-ratting-card border-0">
+            <div class="row g-0 mt-3 mb-3">
+              <div class="col-4">
+                <img src="{% static 'images/age-ratting.webp' %}" alt="Classificação 18 Anos">
+              </div>
+              <div class="col-8">
+                <ul class="m-2">
+                  <li class="float-start">Violência</li>
+                  <li class="float-start">Interação de usuários</li>
+                  <li class="float-start">Compras on-line</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="text-center">
+          <p>
+            ©2022 Digital Extremes Ltd. Todos os direitos reservados. Todas as marcas registradas são propriedade de seus respectivos donos.
+          </p>
+          <p>
+            Site Clone feito por Yuri Nogueira Moreira da Silva como projeto da disciplina de Desenvolvimento Web.
+          </p>
+        </section>
+
+        <section class="text-center">
+          <img src="{% static 'images/steam.webp' %}" class="img-fluid m-1" alt="Steam">
+          <img src="{% static 'images/epicgames.webp' %}" class="img-fluid m-1" alt="Epic Games">
+          <img src="{% static 'images/switch.webp' %}" class="img-fluid m-1" alt="Nintendo Switch">
+          <img src="{% static 'images/playstation.webp' %}" class="img-fluid m-1" alt="Playstation">
+          <img src="{% static 'images/xbox.webp' %}" class="img-fluid m-1" alt="Xbox">
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

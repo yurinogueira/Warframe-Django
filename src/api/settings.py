@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "category",
     "product",
     "user",
+    "market",
 ]
 
 MIDDLEWARE = [
@@ -67,6 +68,7 @@ TEMPLATES = [
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
             os.path.join(BASE_DIR, "core/templates"),
+            os.path.join(BASE_DIR, "market/templates"),
         ],
         "APP_DIRS": True,
         "OPTIONS": {
@@ -102,8 +104,8 @@ SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 # A string like "example.com", or None for standard domain cookie.
 SESSION_COOKIE_DOMAIN = env.str("SESSION_COOKIE_DOMAIN", default=None)
 # Whether the session cookie should be secure (https:// only).
-SESSION_COOKIE_SECURE = not DEBUG
-
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
 
 # CACHE
 # ---------------------------------------------------------------------------------------------------------------------
@@ -152,9 +154,6 @@ USE_TZ = True
 # ---------------------------------------------------------------------------------------------------------------------
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATIC_URL = "/static/"
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "")
-]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
