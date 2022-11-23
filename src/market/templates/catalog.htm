@@ -4,14 +4,10 @@
 {% block content %}
 <section class="container mt-96px mb-5 align-items-center">
     <div class="text-center">
-        <h3 class="default-color"><b>PROGRESSO PARA PRÓXIMA ATUALIZAÇÃO</b></h3>
-        <div class="progress mt-4">
-            <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
-                 role="progressbar"
-                 aria-valuenow="75"
-                 aria-valuemin="0"
-                 aria-valuemax="100"
-                 style="width: 75%">
+        <h3 class="default-color"><b>BEM VINDO AO MARKET</b></h3>
+        <div class="row">
+            <div class="col">
+                <a href="{% url 'market:create_item' %}" class="btn btn-danger">Cadastrar Item</a>
             </div>
         </div>
     </div>

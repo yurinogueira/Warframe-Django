@@ -8,3 +8,11 @@ def index(request):
     }
 
     return render(request, "catalog.htm", context=context)
+
+
+@login_required(login_url="/")
+def create_item(request):
+    context = {
+    }
+
+    return render(request, "create_item.htm", context=context)

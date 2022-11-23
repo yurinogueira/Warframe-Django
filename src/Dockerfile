@@ -33,5 +33,8 @@ RUN pip3 install -r requirements.txt
 
 CMD gunicorn --bind 0.0.0.0:8000 \
              --reload \
+             --workers 3 \
+             --timeout 60 \
+             --log-level=debug \
              --capture-output \
              api.wsgi:application

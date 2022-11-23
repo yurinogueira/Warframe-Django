@@ -20,6 +20,7 @@ class UserLoginForm(AuthenticationForm):
     password = forms.CharField(
         widget=forms.PasswordInput(
             attrs={
+                "id": "loginPassword",
                 "placeholder": "Insira sua senha",
                 "class": "form-control login-canvas-inputs mt-3 m-auto text-white",
             }
