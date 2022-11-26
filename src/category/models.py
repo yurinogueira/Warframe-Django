@@ -6,6 +6,10 @@ class Category(models.Model):
     slug = models.SlugField(max_length=64)
     is_prime = models.BooleanField(default=False)
 
+    @property
+    def prime(self):
+        return "Sim" if self.is_prime else "Não"
+
     class Meta:
         ordering = ("name",)
         verbose_name = "Categoria"

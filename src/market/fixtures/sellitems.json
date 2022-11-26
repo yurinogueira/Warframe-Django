@@ -1,0 +1,190 @@
+[
+  {
+    "model": "core.image",
+    "pk": 96,
+    "fields": {
+      "name": "Cabo Prime",
+      "path": "images/items/prime_handle.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 97,
+    "fields": {
+      "name": "Lâmina Prime",
+      "path": "images/items/prime_blade.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 98,
+    "fields": {
+      "name": "Blueprint Prime",
+      "path": "images/items/prime_blueprint.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 99,
+    "fields": {
+      "name": "Galatine Prime",
+      "path": "images/items/galatine_prime.webp"
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 100,
+    "fields": {
+      "name": "Gram Prime",
+      "path": "images/items/gram_prime.webp"
+    }
+  },
+  {
+    "model": "category.category",
+    "pk": 1,
+    "fields": {
+      "name": "Cabo Prime",
+      "slug": "cabo-prime",
+      "is_prime": true
+    }
+  },
+  {
+    "model": "category.category",
+    "pk": 2,
+    "fields": {
+      "name": "Lâmina Prime",
+      "slug": "lamina-prime",
+      "is_prime": true
+    }
+  },
+  {
+    "model": "category.category",
+    "pk": 3,
+    "fields": {
+      "name": "Blueprint Prime",
+      "slug": "blueprint-prime",
+      "is_prime": true
+    }
+  },
+  {
+    "model": "category.category",
+    "pk": 4,
+    "fields": {
+      "name": "Conjunto Prime",
+      "slug": "conjunto-prime",
+      "is_prime": true
+    }
+  },
+  {
+    "model": "market.sellitem",
+    "pk": 1,
+    "fields": {
+      "item_type": 1,
+      "name": "Galatine Prime Cabo",
+      "description": "Empunhadeira Prime",
+      "slug": "galatine-prime-cabo",
+      "stock": 5,
+      "image": 96,
+      "price": 5,
+      "is_available": true
+    }
+  },
+  {
+    "model": "market.sellitem",
+    "pk": 2,
+    "fields": {
+      "item_type": 2,
+      "name": "Galatine Prime Lâmina",
+      "description": "Lâmina Prime",
+      "slug": "galatine-prime-lamina",
+      "stock": 4,
+      "image": 97,
+      "price": 10,
+      "is_available": true
+    }
+  },
+  {
+    "model": "market.sellitem",
+    "pk": 3,
+    "fields": {
+      "item_type": 3,
+      "name": "Galatine Prime Blueprint",
+      "description": "Receita Prime",
+      "slug": "galatine-prime-blueprint",
+      "stock": 2,
+      "image": 98,
+      "price": 32,
+      "is_available": false
+    }
+  },
+  {
+    "model": "market.sellitem",
+    "pk": 4,
+    "fields": {
+      "item_type": 4,
+      "name": "Galatine Prime Conjunto",
+      "description": "Conjunto Prime",
+      "slug": "galatine-prime",
+      "stock": 1,
+      "image": 99,
+      "price": 65,
+      "is_available": true
+    }
+  },
+  {
+    "model": "market.sellitem",
+    "pk": 5,
+    "fields": {
+      "item_type": 1,
+      "name": "Gram Prime Cabo",
+      "description": "Empunhadeira Prime",
+      "slug": "gram-prime-cabo",
+      "stock": 4,
+      "image": 96,
+      "price": 8,
+      "is_available": true
+    }
+  },
+  {
+    "model": "market.sellitem",
+    "pk": 6,
+    "fields": {
+      "item_type": 2,
+      "name": "Gram Prime Lâmina",
+      "description": "Lâmina Prime",
+      "slug": "gram-prime-lamina",
+      "stock": 4,
+      "image": 97,
+      "price": 12,
+      "is_available": false
+    }
+  },
+  {
+    "model": "market.sellitem",
+    "pk": 7,
+    "fields": {
+      "item_type": 3,
+      "name": "Gram Prime Blueprint",
+      "description": "Receita Prime",
+      "slug": "gram-prime-blueprint",
+      "stock": 1,
+      "image": 98,
+      "price": 28,
+      "is_available": true
+    }
+  },
+  {
+    "model": "market.sellitem",
+    "pk": 8,
+    "fields": {
+      "item_type": 4,
+      "name": "Gram Prime Conjunto",
+      "description": "Conjunto Prime",
+      "slug": "gram-prime",
+      "stock": 1,
+      "image": 100,
+      "price": 70,
+      "is_available": true
+    }
+  }
+]

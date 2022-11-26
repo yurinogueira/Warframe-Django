@@ -1,6 +1,7 @@
 from decimal import Decimal
 
 from django.db import models
+from django.utils import timezone
 
 from core.models import Image
 
@@ -18,7 +19,11 @@ class SellItem(models.Model):
     image = models.ForeignKey(Image, on_delete=models.CASCADE, null=True, blank=True)
     price = models.DecimalField(max_digits=16, decimal_places=2, default=Decimal("0.0"))
     is_available = models.BooleanField(default=False)
-    category = models.ForeignKey("category.Category", on_delete=models.DO_NOTHING)
+    created_at = models.DateTimeField("Criado em", default=timezone.localtime)
+
+    @property
+    def available(self):
+        return "Sim" if self.is_available else "Não"
 
     class Meta:
         ordering = ("name",)
