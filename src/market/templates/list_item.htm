@@ -4,10 +4,26 @@
 {% block content %}
 <section class="container mt-96px mb-5 align-items-center">
     <div class="text-center">
-        <h3 class="default-color"><b>Listar Items</b></h3>
+        <h3 class="default-color"><b>Lista de Items</b></h3>
     </div>
 </section>
 <section class="container align-items-center">
-
+    <table style="width: 100%" class="table table-striped table-sm table-bordered table-responsive mb-4">
+        <thead>
+            <tr>
+                <th class="text-center">Imagem</th>
+                <th class="text-center">Categoria</th>
+                <th class="text-center">Nome</th>
+                <th class="text-center">Descrição</th>
+                <th class="text-center">Preço</th>
+                <th class="text-center">Quantidade</th>
+                <th class="text-center">Disponível</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            {% endfor %}
+        </tbody>
+    </table>
 </section>
 {% endblock %}

@@ -1,11 +1,12 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 
+from market.models import SellItem
+
 
 @login_required(login_url="/")
 def index(request):
     context = {
-        "request": request
     }
 
     return render(request, "market_index.htm", context=context)
@@ -13,8 +14,10 @@ def index(request):
 
 @login_required(login_url="/")
 def list_item(request):
+    items = SellItem.objects.select_related("image", "item_type").all()
+
     context = {
-        "request": request
+        "items": items
     }
 
     return render(request, "list_item.htm", context=context)
@@ -23,7 +26,6 @@ def list_item(request):
 @login_required(login_url="/")
 def create_item(request):
     context = {
-        "request": request
     }
 
     return render(request, "create_item.htm", context=context)
