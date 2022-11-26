@@ -15,6 +15,7 @@ class UserManager(BaseUserManager):
         username = slugify(email)
 
         user = self.model(email=email, username=username, **extra_fields)
+        user.is_active = True
         user.set_password(password)
         user.save()
 

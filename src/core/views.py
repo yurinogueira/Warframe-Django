@@ -1,13 +1,13 @@
 from django.contrib import messages
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 
 from core.choices import COMMON, PRIME, HOME_ITEM, HOME_IMAGE, HOME_SUB_IMAGE, ABOUT_ITEM, DOWNLOAD_ITEM
 from core.models import ListItem, Report, Warframe
 from user.forms import UserLoginForm, UserRegisterForm
-from django.contrib.auth import login as login_function, logout as logout_function, authenticate
+from django.contrib.auth import login, logout, authenticate
 
 
-def login(request):
+def login_view(request):
     home_items = ListItem.objects.filter(item_type=HOME_ITEM)
     home_images = ListItem.objects.select_related("image").filter(item_type=HOME_IMAGE)
     home_sub_images = ListItem.objects.select_related("image").filter(item_type=HOME_SUB_IMAGE)
@@ -28,12 +28,11 @@ def login(request):
         password = form.cleaned_data.get('password')
         user = authenticate(username=username, password=password)
         if user is not None:
-            login_function(request, user)
+            login(request, user)
             messages.success(
                 request,
                 f"Logado com sucesso: {user.email}"
             )
-            return redirect("core:index")
     else:
         context["logining"] = True
 
@@ -42,10 +41,17 @@ def login(request):
     return render(request, "index.htm", context=context)
 
 
-def logout(request):
-    logout_function(request)
+def logout_view(request):
+    form = UserLoginForm()
+    register_form = UserRegisterForm()
 
-    return redirect("core:index")
+    context = {
+        "login_form": form,
+        "register_form": register_form,
+    }
+    logout(request)
+
+    return render(request, "index.htm", context=context)
 
 
 def register(request):
@@ -67,13 +73,12 @@ def register(request):
     if form.is_valid():
         user = form.save()
 
-        login_function(request, user)
+        login(request, user)
 
         messages.success(
             request,
             f"Conta criada com sucesso, usuário: {user.email}"
         )
-        return redirect("core:index")
     else:
         context["registering"] = True
 

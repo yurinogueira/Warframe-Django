@@ -234,8 +234,7 @@
                   <img class="video-icon" src="{% static 'images/launch-icon.svg' %}" alt="Vídeos">
                 </a>
               </li>
-
-              {% if user.is_authenticated %}
+              {% if request.user.is_authenticated %}
               <li class="nav-item nav-item-lined">
                 <a class="pb-2 pt-3 nav-link" href="{% url 'market:index' %}">
                   Market

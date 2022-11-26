@@ -7,6 +7,9 @@
         <h3 class="default-color"><b>BEM VINDO AO MARKET</b></h3>
         <div class="row">
             <div class="col">
+                <a href="{% url 'market:list_item' %}" class="btn btn-danger">Listar Items</a>
+            </div>
+            <div class="col">
                 <a href="{% url 'market:create_item' %}" class="btn btn-danger">Cadastrar Item</a>
             </div>
         </div>

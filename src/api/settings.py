@@ -51,9 +51,9 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
-    "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -97,25 +97,15 @@ DATABASES = {
 
 # Sessions
 # ---------------------------------------------------------------------------------------------------------------------
-# Cache to store session data if using the cache session backend.
-SESSION_CACHE_ALIAS = "sessions"
-# The module to store session data
-SESSION_ENGINE = "django.contrib.sessions.backends.cache"
-# A string like "example.com", or None for standard domain cookie.
-SESSION_COOKIE_DOMAIN = env.str("SESSION_COOKIE_DOMAIN", default=None)
-# Whether the session cookie should be secure (https:// only).
-SESSION_COOKIE_SECURE = False
-CSRF_COOKIE_SECURE = False
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
+SESSION_COOKIE_AGE = 24 * 60 * 60
 
 # CACHE
 # ---------------------------------------------------------------------------------------------------------------------
 CACHES = {
-    "default": env.cache(
-        "CACHES_DEFAULT_URL", default="locmemcache://unique-snowflake"
-    ),
-    "sessions": env.cache(
-        "CACHES_SESSIONS_URL", default="locmemcache://unique-snowflake"
-    ),
+    "default": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+    }
 }
 
 # Password validation
