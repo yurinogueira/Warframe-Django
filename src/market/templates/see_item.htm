@@ -1,0 +1,49 @@
+{% extends "base_market.htm" %}
+{% load static %}
+
+{% block content %}
+<section class="container mt-96px mb-5 align-items-center">
+    <div class="text-center">
+        <h3 class="default-color"><b>Página de Item</b></h3>
+    </div>
+</section>
+<section class="container align-items-center">
+    {% if messages %}
+        <div class="mb-3">
+            {% for message in messages %}
+                <ul class="list-group rounded">
+                    <li style="padding-top: 7px; padding-bottom: 7px;" class="list-group-item list-group-item-info">
+                        {{ message }}
+                    </li>
+                </ul>
+            {% endfor %}
+        </div>
+    {% endif %}
+    <div class="row mb-2">
+        <div class="col-lg-3 col-md-4">
+            <img src="{% static item.image.path %}"
+                 class="mr-3"
+                 style="width: 210px"
+                 alt="{{ item.image.name }}">
+        </div>
+        <div class="col-lg-9 col-md-8">
+            <div class="row">
+                <div class="col-xl-2 col-lg-3 col-4 font-weight-bold mb-1">Categoria</div>
+                <div class="col-xl-10 col-lg-9 col-8">{{ item.item_type }}</div>
+                <div class="col-xl-2 col-lg-3 col-4 font-weight-bold mb-1">Nome</div>
+                <div class="col-xl-10 col-lg-9 col-8">{{ item.name }}</div>
+                <div class="col-xl-2 col-lg-3 col-4 font-weight-bold mb-1">Descrição</div>
+                <div class="col-xl-10 col-lg-9 col-8">{{ item.description }}</div>
+                <div class="col-xl-2 col-lg-3 col-4 font-weight-bold mb-1">Estoque</div>
+                <div class="col-xl-10 col-lg-9 col-8">{{ item.stock }}</div>
+                <div class="col-xl-2 col-lg-3 col-4 font-weight-bold mb-1">Preço</div>
+                <div class="col-xl-10 col-lg-9 col-8">{{ item.price }}</div>
+                <div class="col-xl-2 col-lg-3 col-4 font-weight-bold mb-1">Disponível</div>
+                <div class="col-xl-10 col-lg-9 col-8">{{ item.available }}</div>
+                <div class="col-xl-2 col-lg-3 col-4 font-weight-bold mb-1">Criado em</div>
+                <div class="col-xl-10 col-lg-9 col-8">{{ item.created_at | date:'d/m/Y' }}</div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

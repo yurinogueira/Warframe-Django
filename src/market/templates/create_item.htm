@@ -4,10 +4,154 @@
 {% block content %}
 <section class="container mt-96px mb-5 align-items-center">
     <div class="text-center">
-        <h3 class="default-color"><b>Cadastrar Item</b></h3>
+        <h3 class="default-color"><b>Cadastro de Item</b></h3>
     </div>
 </section>
 <section class="container align-items-center">
+    <form action="" method="POST" class="pb-4" novalidate>
+        <div class="row mb-xl-3">
+            <div class="col-xl-6">
+                <div class="row">
+                    <label for="id_item_type" class="col-xl-2 font-weight-bold">Categoria</label>
+                    <div class="col-xl-10">
+                        {{ form.item_type }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="row">
+                    <label for="id_name" class="col-xl-2 font-weight-bold">Nome</label>
+                    <div class="col-xl-10">
+                        {{ form.name }}
+                        {% if form.name.errors %}
+                            <div class="alert alert-danger mb-0" role="alert" style="padding-top: 2px; padding-bottom: 2px;">
+                            {% for error in form.name.errors %}
+                                <small>{{ error }}</small>
+                            {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <div class="row mb-xl-3">
+            <div class="col-xl-6">
+                <div class="row">
+                    <label for="id_description" class="col-xl-2 font-weight-bold">Descrição</label>
+                    <div class="col-xl-10">
+                        {{ form.description }}
+                        {% if form.description.errors %}
+                            <div class="alert alert-danger mb-0" role="alert" style="padding-top: 2px; padding-bottom: 2px;">
+                            {% for error in form.description.errors %}
+                                <small>{{ error }}</small>
+                            {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="row">
+                    <label for="id_stock" class="col-xl-2 font-weight-bold">Estoque</label>
+                    <div class="col-xl-10">
+                        {{ form.stock }}
+                        {% if form.stock.errors %}
+                            <div class="alert alert-danger mb-0" role="alert" style="padding-top: 2px; padding-bottom: 2px;">
+                            {% for error in form.stock.errors %}
+                                <small>{{ error }}</small>
+                            {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-xl-3">
+            <div class="col-xl-6">
+                <div class="row">
+                    <label for="id_image" class="col-xl-2 font-weight-bold">Imagem</label>
+                    <div class="col-xl-10">
+                        {{ form.image }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="row">
+                    <label for="id_price" class="col-xl-2 font-weight-bold">Preço</label>
+                    <div class="col-xl-10">
+                        {{ form.price }}
+                        {% if form.price.errors %}
+                            <div class="alert alert-danger mb-0" role="alert" style="padding-top: 2px; padding-bottom: 2px;">
+                            {% for error in form.price.errors %}
+                                <small>{{ error }}</small>
+                            {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-xl-6">
+                <div class="row">
+                    <label for="id_created_at" class="col-xl-2 font-weight-bold">Criado em</label>
+                    <div class="col-xl-10">
+                        {{ form.created_at }}
+                        {% if form.created_at.errors %}
+                            <div class="alert alert-danger mb-0" role="alert" style="padding-top: 2px; padding-bottom: 2px;">
+                            {% for error in form.created_at.errors %}
+                                <small>{{ error }}</small>
+                            {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="row">
+                    <div class="offset-xl-2 col-xl-10">
+                        <div class="form-check pl-0 mt-xl-0 mt-2">
+                            {{ form.is_available }}
+                            <label for="id_is_available" class="form-check-label">Disponível</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-xl-6">
+                <div class="row">
+                    <div class="col-xl-10 offset-xl-2">
+                        {% csrf_token %}
+                        <button id="botao" type="submit" class="btn btn-primary">
+                            Cadastrar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
 </section>
+{% endblock %}
+
+{% block domready %}
+   $('#id_created_at').datepicker({
+       changeMonth: true,
+       changeYear: true,
+       yearRange: "-3:+0",
+       dateFormat: 'dd/mm/yy',
+       dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
+       dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
+       dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
+       monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+       monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+       nextText: 'Próximo',
+       prevText: 'Anterior',
+       showOn: 'focus',
+   });
+   $('#id_created_at').mask('00/00/0000');
 {% endblock %}

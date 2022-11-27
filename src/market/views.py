@@ -1,8 +1,9 @@
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 
-from market.forms import SearchSellItemForm
+from market.forms import SearchSellItemForm, SellItemForm
 from market.models import SellItem
 
 
@@ -37,8 +38,25 @@ def list_item(request):
 
 
 @login_required(login_url="/")
+def get_item(request, slug):
+    item = get_object_or_404(SellItem, slug=slug)
+    return render(request, "see_item.htm", {"item": item})
+
+
+@login_required(login_url="/")
 def create_item(request):
+    if request.POST:
+        item_form = SellItemForm(request.POST)
+        if item_form.is_valid():
+            item = item_form.save()
+            messages.add_message(request, messages.INFO, "Item cadastrado com sucesso!")
+
+            return redirect("market:get_item", slug=item.slug)
+    else:
+        item_form = SellItemForm()
+
     context = {
+        "form": item_form,
     }
 
     return render(request, "create_item.htm", context=context)

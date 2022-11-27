@@ -61,7 +61,9 @@
                     {{ item.item_type.prime }}
                 </td>
                 <td class="text-center align-middle table-primary-field">
-                    {{ item.name }}
+                    <a class="link-primary" href="{% url 'market:get_item' item.slug %}">
+                        {{ item.name }}
+                    </a>
                 </td>
                 <td class="text-center align-middle table-primary-field">
                     {{ item.description }}
