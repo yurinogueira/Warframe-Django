@@ -2,22 +2,6 @@
     font-family: "Noto Sans", sans-serif;
 }
 
-.table-size {
-    width: 100%;
-}
-
-.table-primary-field {
-    width: 20%;
-}
-
-.table-secondary-field {
-    width: 10%;
-}
-
-.table-lower-field {
-    width: 5%;
-}
-
 .table-image-size {
     height: 80px;
     width: 80px;

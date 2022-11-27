@@ -12,7 +12,7 @@
         <div class="row mb-xl-3">
             <div class="col-xl-6">
                 <div class="row">
-                    <label for="id_item_type" class="col-xl-2 font-weight-bold">Categoria</label>
+                    <label for="id_item_type" class="col-xl-2 fw-bold">Categoria</label>
                     <div class="col-xl-10">
                         {{ form.item_type }}
                     </div>
@@ -20,7 +20,7 @@
             </div>
             <div class="col-xl-6">
                 <div class="row">
-                    <label for="id_name" class="col-xl-2 font-weight-bold">Nome</label>
+                    <label for="id_name" class="col-xl-2 fw-bold">Nome</label>
                     <div class="col-xl-10">
                         {{ form.name }}
                         {% if form.name.errors %}
@@ -38,7 +38,7 @@
         <div class="row mb-xl-3">
             <div class="col-xl-6">
                 <div class="row">
-                    <label for="id_description" class="col-xl-2 font-weight-bold">Descrição</label>
+                    <label for="id_description" class="col-xl-2 fw-bold">Descrição</label>
                     <div class="col-xl-10">
                         {{ form.description }}
                         {% if form.description.errors %}
@@ -53,7 +53,7 @@
             </div>
             <div class="col-xl-6">
                 <div class="row">
-                    <label for="id_stock" class="col-xl-2 font-weight-bold">Estoque</label>
+                    <label for="id_stock" class="col-xl-2 fw-bold">Estoque</label>
                     <div class="col-xl-10">
                         {{ form.stock }}
                         {% if form.stock.errors %}
@@ -71,7 +71,7 @@
         <div class="row mb-xl-3">
             <div class="col-xl-6">
                 <div class="row">
-                    <label for="id_image" class="col-xl-2 font-weight-bold">Imagem</label>
+                    <label for="id_image" class="col-xl-2 fw-bold">Imagem</label>
                     <div class="col-xl-10">
                         {{ form.image }}
                     </div>
@@ -79,7 +79,7 @@
             </div>
             <div class="col-xl-6">
                 <div class="row">
-                    <label for="id_price" class="col-xl-2 font-weight-bold">Preço</label>
+                    <label for="id_price" class="col-xl-2 fw-bold">Preço</label>
                     <div class="col-xl-10">
                         {{ form.price }}
                         {% if form.price.errors %}
@@ -97,7 +97,7 @@
         <div class="row mb-3">
             <div class="col-xl-6">
                 <div class="row">
-                    <label for="id_created_at" class="col-xl-2 font-weight-bold">Criado em</label>
+                    <label for="id_created_at" class="col-xl-2 fw-bold">Criado em</label>
                     <div class="col-xl-10">
                         {{ form.created_at }}
                         {% if form.created_at.errors %}
@@ -127,7 +127,7 @@
                 <div class="row">
                     <div class="col-xl-10 offset-xl-2">
                         {% csrf_token %}
-                        <button id="botao" type="submit" class="btn btn-primary">
+                        <button id="botao" type="submit" class="btn btn-danger">
                         {% if 'item_slug' in request.session %}
                             Alterar
                         {% else %}

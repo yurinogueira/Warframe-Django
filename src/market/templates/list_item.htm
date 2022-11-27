@@ -13,17 +13,15 @@
         <hr class="mt-0">
     </div>
     <form action="" method="GET" class="mb-4">
-        <div class="form-group row mb-1">
-            <label for="id_name" class="col-lg-2 col-form-label font-weight-bold">Nome</label>
-            <div class="col-lg-10">
+        <div class="row mb-1">
+            <label for="id_name" class="col-lg-1 col-2 col-form-label fw-bold align-middl text-center" style="height: 100%">Nome</label>
+            <div class="col-lg-9 col-6">
                 {{ form.name }}
             </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-lg-10 offset-lg-2">
-                <button type="submit" class="btn btn-primary">
+            <div class="col-lg-2 col-4">
+                <button type="submit" class="btn red-button header-red-button mx-3 mb-1 mb-xl-0 px-4">
                     <div class="d-flex align-items-center">
-                        <img width="24" src="{% static 'images/search.png' %}" alt="Pesquisar" class="mr-2">Pesquisar
+                        <img width="24" src="{% static 'images/search.png' %}" alt="Pesquisar" class="me-2">Pesquisar
                     </div>
                 </button>
             </div>
@@ -31,8 +29,8 @@
     </form>
 </section>
 {% if items %}
-<section class="container align-items-center">
-    <table class="table table-size table-striped table-sm table-bordered table-responsive mb-4">
+<section class="container align-items-center table-responsive">
+    <table class="table mb-4">
         <thead>
             <tr>
                 <th class="text-center">Imagem</th>
@@ -49,35 +47,35 @@
         <tbody>
         {% for item in items %}
             <tr>
-                <td class="text-center align-middle table-secondary-field">
+                <td class="text-center align-middle">
                     <img src="{% static item.image.path %}"
                          class="card-img-top img-fluid table-image-size"
                          alt="{{ item.image.name }}">
                 </td>
-                <td class="text-center align-middle table-secondary-field">
+                <td class="text-center align-middle">
                     {{ item.item_type.name }}
                 </td>
-                <td class="text-center align-middle table-lower-field">
+                <td class="text-center align-middle">
                     {{ item.item_type.prime }}
                 </td>
-                <td class="text-center align-middle table-primary-field">
-                    <a class="link-primary" href="{% url 'market:get_item' item.slug %}">
+                <td class="text-center align-middle">
+                    <a class="link-danger" href="{% url 'market:get_item' item.slug %}">
                         {{ item.name }}
                     </a>
                 </td>
-                <td class="text-center align-middle table-primary-field">
+                <td class="text-center align-middle">
                     {{ item.description }}
                 </td>
-                <td class="text-center align-middle table-secondary-field">
+                <td class="text-center align-middle">
                     C$ {{ item.price }}
                 </td>
-                <td class="text-center align-middle table-secondary-field">
+                <td class="text-center align-middle">
                     {{ item.stock }}
                 </td>
-                <td class="text-center align-middle table-lower-field">
+                <td class="text-center align-middle">
                     {{ item.available }}
                 </td>
-                <td class="text-center align-middle table-secondary-field">
+                <td class="text-center align-middle">
                     {{ item.created_at | date:'d/m/Y' }}
                 </td>
             </tr>
@@ -85,46 +83,48 @@
         </tbody>
     </table>
 </section>
-<section class="container align-items-center">
-    <nav aria-label="Paginator">
-        {% if items.has_other_pages %}
-            <ul class="pagination">
-            {% if items.has_previous %}
-                <li class="page-item">
-                    <a class="page-link" href="?page={{ items.previous_page_number }}&name={{ name }}">
-                        Anterior
-                    </a>
-                </li>
-            {% else %}
-                <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1">Anterior</a>
-                </li>
-            {% endif %}
-            {% for i in items.paginator.page_range %}
-                {% if items.number == i %}
-                    <li class="page-item active">
-                        <a class="page-link" href="#">{{ i }}</a>
+<section class="container text-center">
+    <div class="row">
+        <nav aria-label="Paginator">
+            {% if items.has_other_pages %}
+                <ul class="pagination">
+                {% if items.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ items.previous_page_number }}&name={{ name }}">
+                            Anterior
+                        </a>
                     </li>
                 {% else %}
-                    <li class="page-item">
-                        <a class="page-link" href="?page={{ i }}&name={{ name }}">{{ i }}</a>
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">Anterior</a>
                     </li>
                 {% endif %}
-            {% endfor %}
-            {% if items.has_next %}
-                <li class="page-item">
-                    <a class="page-link" href="?page={{ items.next_page_number }}&name={{ name }}">
-                        Próxima
-                    </a>
-                </li>
-            {% else %}
-                <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1">Próxima</a>
-                </li>
+                {% for i in items.paginator.page_range %}
+                    {% if items.number == i %}
+                        <li class="page-item active">
+                            <a class="page-link" href="#">{{ i }}</a>
+                        </li>
+                    {% else %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ i }}&name={{ name }}">{{ i }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+                {% if items.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ items.next_page_number }}&name={{ name }}">
+                            Próxima
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">Próxima</a>
+                    </li>
+                {% endif %}
+                </ul>
             {% endif %}
-            </ul>
-        {% endif %}
-    </nav>
+        </nav>
+    </div>
 </section>
 {% endif %}
 {% endblock %}

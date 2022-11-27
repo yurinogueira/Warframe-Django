@@ -40,6 +40,7 @@ def list_item(request):
 @login_required(login_url="/")
 def get_item(request, slug):
     item = get_object_or_404(SellItem, slug=slug)
+    request.session["item_slug_del"] = slug
     return render(request, "see_item.htm", {"item": item})
 
 
@@ -83,3 +84,12 @@ def edit_item(request, slug):
     request.session["item_slug"] = slug
 
     return render(request, "create_item.htm", {"form": item_form})
+
+
+@login_required(login_url="/")
+def delete_item(request):
+    item_slug = request.session.get("item_slug_del")
+    item = get_object_or_404(SellItem, slug=item_slug)
+    item.delete()
+    del request.session["item_slug_del"]
+    return redirect("market:list_item")

@@ -9,6 +9,7 @@ class SearchSellItemForm(forms.Form):
     name = forms.CharField(
         widget=forms.TextInput(attrs={
             "class": "form-control form-control-sm",
+            "style": "height: 100%",
             "maxlength": "64",
         }),
         required=False,
