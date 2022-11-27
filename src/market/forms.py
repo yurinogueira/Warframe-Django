@@ -47,8 +47,7 @@ class SellItemForm(forms.ModelForm):
         required=True,
     )
     created_at = forms.DateTimeField(
-        widget=forms.DateInput(attrs={
-            "type": "date",
+        widget=forms.DateTimeInput(attrs={
             "class": "form-control form-control-sm",
         }),
         required=False,

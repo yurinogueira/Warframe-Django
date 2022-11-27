@@ -12,7 +12,7 @@ class SellItem(models.Model):
         related_name="items",
         on_delete=models.CASCADE
     )
-    name = models.CharField("Nome", max_length=64, db_index=True)
+    name = models.CharField("Nome", max_length=64, db_index=True, unique=True)
     description = models.CharField("Desrição", max_length=256)
     slug = models.SlugField(max_length=64)
     stock = models.IntegerField(default=0)

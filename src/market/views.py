@@ -46,13 +46,27 @@ def get_item(request, slug):
 @login_required(login_url="/")
 def create_item(request):
     if request.POST:
-        item_form = SellItemForm(request.POST)
+        item_slug = request.session.get("item_slug")
+        if item_slug:
+            item = get_object_or_404(SellItem, slug=item_slug)
+            item_form = SellItemForm(request.POST, instance=item)
+        else:
+            item_form = SellItemForm(request.POST)
+
         if item_form.is_valid():
             item = item_form.save()
-            messages.add_message(request, messages.INFO, "Item cadastrado com sucesso!")
+            message = "Item cadastrado com sucesso!"
+
+            if item_slug:
+                message = "Item alterado com sucesso!"
+                del request.session["item_slug"]
+
+            messages.add_message(request, messages.INFO, message)
 
             return redirect("market:get_item", slug=item.slug)
     else:
+        if "item_slug" in request.session:
+            del request.session["item_slug"]
         item_form = SellItemForm()
 
     context = {
@@ -60,3 +74,12 @@ def create_item(request):
     }
 
     return render(request, "create_item.htm", context=context)
+
+
+@login_required(login_url="/")
+def edit_item(request, slug):
+    item = get_object_or_404(SellItem, slug=slug)
+    item_form = SellItemForm(instance=item)
+    request.session["item_slug"] = slug
+
+    return render(request, "create_item.htm", {"form": item_form})
