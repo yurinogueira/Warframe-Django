@@ -8,17 +8,19 @@
     </div>
 </section>
 <section class="container align-items-center">
-    <div class="mb-4">
+    <div class="mb-2">
         <h5>Pesquisa de Items</h5>
         <hr class="mt-0">
     </div>
-    <form action="" method="GET" class="mb-4">
-        <div class="row mb-1">
-            <label for="id_name" class="col-lg-1 col-2 col-form-label fw-bold align-middl text-center" style="height: 100%">Nome</label>
-            <div class="col-lg-9 col-6">
+    <form action="" method="GET" class="mb-2">
+        <div class="row mb-2">
+            <label for="id_name" class="col-lg-1 col-3 col-form-label fw-bold align-middl text-center" style="height: 100%">Nome</label>
+            <div class="col-lg-11 col-9">
                 {{ form.name }}
             </div>
-            <div class="col-lg-2 col-4">
+        </div>
+        <div class="row mb-0">
+            <div class="col-12 text-center">
                 <button type="submit" class="btn red-button header-red-button mx-3 mb-1 mb-xl-0 px-4">
                     <div class="d-flex align-items-center">
                         <img width="24" src="{% static 'images/search.png' %}" alt="Pesquisar" class="me-2">Pesquisar
@@ -29,7 +31,7 @@
     </form>
 </section>
 {% if items %}
-<section class="container align-items-center table-responsive">
+<section class="container align-items-center table-responsive table-responsive-sm">
     <table class="table mb-4">
         <thead>
             <tr>
