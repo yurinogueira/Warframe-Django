@@ -1,0 +1,59 @@
+{% load static %}
+
+{% if results %}
+<section class="container align-items-center table-responsive table-responsive-sm">
+    <table class="table mb-4">
+        <thead>
+            <tr>
+                <th class="text-center">Categoria</th>
+                <th class="text-center">Nome</th>
+                <th class="text-center">Preço Unitário</th>
+                <th class="text-center">Preço Parcial</th>
+                <th class="text-center">Quantidade</th>
+                <th class="text-center">Operação</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for product, form in results  %}
+            <tr>
+                <td class="text-center align-middle">
+                    {{ product.item_type.name }}
+                </td>
+                <td class="text-center align-middle">
+                    {{ product.name }}
+                </td>
+                <td class="text-center align-middle">
+                    C$ {{ product.price }}
+                </td>
+                <td class="text-center align-middle partial-price">
+                    C$ {{ product.partial_price }}
+                </td>
+                <td class="text-center align-middle">
+                    <form class="mx-auto" style="width: auto" action="{% url "product:edit_product" %}" method="POST" novalidate>
+                        {% csrf_token %}
+                        {{ form.id }}
+                        {{ form.stock }}
+                    </form>
+                </td>
+                <td class="text-right align-middle">
+                    <form action="{% url "product:delete_product" %}" method="POST" novalidate>
+                        {% csrf_token %}
+                        {{ form.id }}
+                        <button type="button" class="btn btn-sm btn-danger delete-button mr-4" tabindex="-1">Deletar</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+        <tr id="totalPrice">
+            <td colspan="4">
+                <strong style="margin-left: 10px">Valor do carrinho: </strong>
+            </td>
+            <td></td>
+            <td class="text-right pr-5">
+                <strong id="valor-total">C$ {{ total_price }}</strong>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+{% endif %}

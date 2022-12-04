@@ -1,0 +1,24 @@
+[
+  {
+    "model": "product.product",
+    "pk": 1,
+    "fields": {
+      "item_type": 2,
+      "name": "Lâmina Raramente Rara",
+      "stock": 4,
+      "price": 12,
+      "partial_price": 48
+    }
+  },
+  {
+    "model": "product.product",
+    "pk": 2,
+    "fields": {
+      "item_type": 3,
+      "name": "Blueprint Prime Raro",
+      "stock": 5,
+      "price": 15,
+      "partial_price": 75
+    }
+  }
+]

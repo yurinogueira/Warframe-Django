@@ -1,0 +1,94 @@
+{% extends "base_market.htm" %}
+{% load static %}
+
+{% block content %}
+<section class="container mt-96px mb-5 align-items-center">
+    {% csrf_token %}
+    <br>
+    <div id="productCreate"></div>
+    <br>
+    <div id="productList">
+    </div>
+</section>
+{% endblock %}
+
+{% block domready %}
+$.get("{% url 'product:create_product' %}", function(response) {
+    $("#productCreate").html(response);
+});
+
+$.get("{% url "product:list_product" %}", function(response) {
+    $("#productList").html(response);
+});
+
+$("#productList").on("blur", "input", function() {
+    const productStock = $(this).val();
+    if (productStock <= 0) {
+        $(this).focus();
+        return;
+    }
+
+    const form = $(this).parent();
+    const tr = form.parent().parent();
+    const formData = form.serializeArray();
+
+    $.post("{% url "product:edit_product" %}", formData, function(response) {
+        const totalPrice = `C$ ${response.total_price}`;
+        const partialPrice = `C$ ${response.product_price}`;
+        $("#valor-total").text(totalPrice);
+        tr.find(".partial-price").text(partialPrice);
+    });
+});
+
+$("#productList").on("click", ".delete-button", function() {
+    const form = $(this).parent();
+    const tr = form.parent().parent();
+    const formData = form.serializeArray();
+
+    $.post("{% url "product:delete_product" %}", formData, function(response) {
+        tr.fadeTo("slow", 0.1, function() {
+            $(this).remove();
+            const totalPrice = `C$ ${response.total_price}`;
+            $("#valor-total").text(totalPrice);
+        });
+    });
+});
+
+$("#productCreate").on("click", ".create-button", function() {
+    const form = $(this).parent().parent().parent().parent().parent();
+    const formData = form.serializeArray();
+
+    $.post("{% url 'product:create_product' %}", formData, function(response) {
+        const totalPrice = `C$ ${response.total_price}`;
+        $("#valor-total").text(totalPrice);
+        $(`<tr>
+            <td class="text-center align-middle">
+                ${ response.category.name }
+            </td>
+            <td class="text-center align-middle">
+                ${ response.product.name }
+            </td>
+            <td class="text-center align-middle">
+                C$ ${ response.product.price }
+            </td>
+            <td class="text-center align-middle partial-price">
+                C$ ${ response.product.partial_price }
+            </td>
+            <td class="text-center align-middle">
+                <form class="mx-auto" style="width: auto" action="{% url "product:edit_product" %}" method="POST" novalidate>
+                    {% csrf_token %}
+                    <input type="hidden" value=${response.product.id} name="id">
+                    <input type="text" value=${response.product.stock} name="stock">
+                </form>
+            </td>
+            <td class="text-right align-middle">
+                <form action="{% url "product:delete_product" %}" method="POST" novalidate>
+                    {% csrf_token %}
+                    <input type="hidden" value="${response.product.id}" name="id">
+                    <button type="button" class="btn btn-sm btn-danger delete-button mr-4" tabindex="-1">Deletar</button>
+                </form>
+            </td>
+        </tr>`).insertBefore($("#totalPrice"));
+    });
+});
+{% endblock %}

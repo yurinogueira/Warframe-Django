@@ -2,7 +2,7 @@ from market import views
 from django.urls import path
 
 urlpatterns = [
-    path("", views.index, name="index"),
+    path("", views.list_item, name="index"),
     path("list_item/", views.list_item, name="list_item"),
     path("create_item/", views.create_item, name="create_item"),
     path("delete_item/", views.delete_item, name="delete_item"),

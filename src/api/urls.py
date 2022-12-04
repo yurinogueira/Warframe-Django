@@ -33,4 +33,5 @@ urlpatterns = [
     # CORE
     path("", include(("core.urls", "core")), name="core"),
     path("market/", include(("market.urls", "market")), name="market"),
+    path("product/", include(("product.urls", "product")), name="product"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

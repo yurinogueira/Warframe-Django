@@ -24,7 +24,7 @@ shell:
 	docker-compose exec web python manage.py shell
 
 loaddata:
-	docker-compose exec web python manage.py loaddata warframes news items sellitems
+	docker-compose exec web python manage.py loaddata warframes news items sellitems products
 
 migrate:
 	docker-compose exec web python manage.py migrate --noinput

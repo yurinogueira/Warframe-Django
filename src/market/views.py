@@ -9,10 +9,7 @@ from market.models import SellItem
 
 @login_required(login_url="/")
 def index(request):
-    context = {
-    }
-
-    return render(request, "market_index.htm", context=context)
+    return redirect("market:list_item")
 
 
 @login_required(login_url="/")
